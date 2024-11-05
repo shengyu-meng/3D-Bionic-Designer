@@ -1,0 +1,9 @@
+.venv/
+flagged/
+.temp/
+temp.py
+.examples/
+.workflow/
+.script_examples/
+temp/
+desktop.ini

@@ -1,0 +1,1095 @@
+{
+  "62": {
+    "inputs": {
+      "text": "You are a visionary and adept designer and artist, passionate about pioneering new design typologies and methodologies. Your current focus is on integrating biological intelligence into the traditional design workflow, leveraging nature's ingenuity to revolutionize product practice.\n\n"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "TextInput_Agent-role"
+    }
+  },
+  "63": {
+    "inputs": {
+      "image": "empyt.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image_ref-image"
+    }
+  },
+  "65": {
+    "inputs": {
+      "text": "Now, your reference creature is \"coral\"."
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "TextInput_target-creature"
+    }
+  },
+  "70": {
+    "inputs": {
+      "text": "For this task, I will provide you with the name of a specific creature and a reference image. Your objective is to identify a potential biological feature of this creature—this could be its geometric characteristics, collective intelligence behaviors, material efficiency, or system mechanisms—and elaborate on how this feature could be innovatively applied to enhance traditional architectural design workflows.\n\nPlease include in your response:\n\n1. **Identification of the Biological Feature**: Briefly describe the chosen feature (e.g., the hexagonal honeycomb structures created by bees for efficient space utilization).\n\n2. **Hypothesis Development**: Create a detailed hypothesis explaining why this particular biological feature is beneficial for architectural design. Consider aspects such as sustainability, structural integrity, efficiency, or adaptability.\n\n3. **Application Methodology**: Describe how this biological feature can be systematically integrated into existing design processes. This should include both conceptual and technical considerations (e.g., using biomimicry to develop new building materials or spatial configurations).\n\n4. **Potential Impact**: Speculate on the potential impact of implementing this bio-inspired approach on traditional design practices, including possible challenges and advantages.\n\nYour insights will contribute to developing a groundbreaking approach that blends art work with the wisdom of nature's designs, potentially setting new standards in the field."
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "TextInput_Task"
+    }
+  },
+  "76": {
+    "inputs": {
+      "delimiter": ", ",
+      "clean_whitespace": "false",
+      "text_a": [
+        "62",
+        0
+      ],
+      "text_b": [
+        "70",
+        0
+      ],
+      "text_c": [
+        "65",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text_1st input: role, task, target"
+    }
+  },
+  "86": {
+    "inputs": {
+      "text": [
+        "237",
+        0
+      ],
+      "find": "<target>",
+      "replace": [
+        "172",
+        0
+      ]
+    },
+    "class_type": "Text Find and Replace",
+    "_meta": {
+      "title": "Text Find and Replace: Building type"
+    }
+  },
+  "97": {
+    "inputs": {
+      "ckpt_name": "1_SDXL\\sd_xl_turbo_1.0_fp16.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "98": {
+    "inputs": {
+      "steps": 5,
+      "denoise": 1,
+      "model": [
+        "168",
+        0
+      ]
+    },
+    "class_type": "SDTurboScheduler",
+    "_meta": {
+      "title": "SDTurboScheduler"
+    }
+  },
+  "99": {
+    "inputs": {
+      "add_noise": true,
+      "noise_seed": [
+        "206",
+        3
+      ],
+      "cfg": 1.2,
+      "model": [
+        "168",
+        0
+      ],
+      "positive": [
+        "100",
+        0
+      ],
+      "negative": [
+        "101",
+        0
+      ],
+      "sampler": [
+        "105",
+        0
+      ],
+      "sigmas": [
+        "98",
+        0
+      ],
+      "latent_image": [
+        "104",
+        0
+      ]
+    },
+    "class_type": "SamplerCustom",
+    "_meta": {
+      "title": "SamplerCustom"
+    }
+  },
+  "100": {
+    "inputs": {
+      "text": [
+        "286",
+        0
+      ],
+      "clip": [
+        "168",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "101": {
+    "inputs": {
+      "text": "blurry, text, watermark, signature, low quality, NSFW",
+      "clip": [
+        "168",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "102": {
+    "inputs": {
+      "samples": [
+        "99",
+        0
+      ],
+      "vae": [
+        "97",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "104": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "105": {
+    "inputs": {
+      "sampler_name": "lcm"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "168": {
+    "inputs": {
+      "lora_name": "SDXL Lora\\sd_xl_dpo_lora_v1-128dim.safetensors",
+      "strength_model": 1,
+      "strength_clip": 1,
+      "model": [
+        "97",
+        0
+      ],
+      "clip": [
+        "97",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "172": {
+    "inputs": {
+      "text": "chair"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "TextInput_design object"
+    }
+  },
+  "187": {
+    "inputs": {
+      "geometry_extract_resolution": 240,
+      "marching_cude_threshold": 25,
+      "tsr_model": [
+        "188",
+        0
+      ],
+      "reference_image": [
+        "190",
+        1
+      ],
+      "reference_mask": [
+        "190",
+        0
+      ]
+    },
+    "class_type": "[Comfy3D] TripoSR",
+    "_meta": {
+      "title": "TripoSR"
+    }
+  },
+  "188": {
+    "inputs": {
+      "model_name": "model.ckpt",
+      "chunk_size": 8192
+    },
+    "class_type": "[Comfy3D] Load TripoSR Model",
+    "_meta": {
+      "title": "Load TripoSR Model"
+    }
+  },
+  "189": {
+    "inputs": {
+      "axis_x_to": "+y",
+      "axis_y_to": "+z",
+      "axis_z_to": "+x",
+      "flip_normal": false,
+      "scale": 1,
+      "mesh": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "[Comfy3D] Switch Mesh Axis",
+    "_meta": {
+      "title": "Switch Mesh Axis"
+    }
+  },
+  "190": {
+    "inputs": {
+      "model_name": "u2net",
+      "image": [
+        "102",
+        0
+      ]
+    },
+    "class_type": "RembgNode_Mix",
+    "_meta": {
+      "title": "Remove Background ♾️Mixlab"
+    }
+  },
+  "193": {
+    "inputs": {
+      "text": "Generate a short filename for saving an artwork, using the provided description. The file name must be plain text (no markdown format), less then 20 letters, without extension and special symbols, except replacing spaces with underscores.\n\nPlease reply with the required filename only, without any fillers, greetings, or connecting words.\n\n"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "WIP_short_name_generator"
+    }
+  },
+  "195": {
+    "inputs": {
+      "text": [
+        "244",
+        0
+      ],
+      "DisplayText_Zho_0": "CoralLightChair"
+    },
+    "class_type": "DisplayText_Zho",
+    "_meta": {
+      "title": "Short_file_name"
+    }
+  },
+  "201": {
+    "inputs": {
+      "text": ".obj"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "Text Input ♾️Mixlab"
+    }
+  },
+  "202": {
+    "inputs": {
+      "text": "AI-Artist\\3D-Bionic-Product-Designer\\"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "Text Input ♾️Mixlab"
+    }
+  },
+  "204": {
+    "inputs": {
+      "delimiter": "",
+      "clean_whitespace": "false",
+      "text_a": [
+        "207",
+        0
+      ],
+      "text_b": [
+        "205",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "generate transparent file name\n"
+    }
+  },
+  "205": {
+    "inputs": {
+      "text": "-TR"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "Text Input ♾️Mixlab"
+    }
+  },
+  "206": {
+    "inputs": {
+      "seed": 1121677064896413
+    },
+    "class_type": "Seed",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "207": {
+    "inputs": {
+      "delimiter": "_",
+      "clean_whitespace": "true",
+      "text_a": [
+        "195",
+        0
+      ],
+      "text_b": [
+        "277",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "generate file names\n"
+    }
+  },
+  "229": {
+    "inputs": {
+      "model": "qwen2:7b (Q4_0, 4.4GB)",
+      "custom_model": [
+        "251",
+        0
+      ],
+      "api_host": "http://localhost:11434",
+      "timeout": 300,
+      "temperature": 0.7000000000000001,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_penalty": 1.1,
+      "seed_number": [
+        "206",
+        3
+      ],
+      "max_tokens": 4000,
+      "keep_model_alive": -1,
+      "system_context": [
+        "86",
+        0
+      ],
+      "prompt": [
+        "284",
+        0
+      ]
+    },
+    "class_type": "OllamaTextDescriber",
+    "_meta": {
+      "title": "🦙 Ollama Text Describer 🦙"
+    }
+  },
+  "230": {
+    "inputs": {
+      "delimiter": ", ",
+      "clean_whitespace": "false",
+      "text_a": [
+        "70",
+        0
+      ],
+      "text_b": [
+        "65",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text_1st input: task, target"
+    }
+  },
+  "232": {
+    "inputs": {
+      "model": "qwen2:7b (Q4_0, 4.4GB)",
+      "custom_model": [
+        "251",
+        0
+      ],
+      "api_host": "http://localhost:11434",
+      "timeout": 300,
+      "temperature": 0.7000000000000001,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_penalty": 1.1,
+      "seed_number": [
+        "206",
+        3
+      ],
+      "max_tokens": 150,
+      "keep_model_alive": -1,
+      "system_context": [
+        "246",
+        0
+      ],
+      "prompt": [
+        "248",
+        0
+      ]
+    },
+    "class_type": "OllamaTextDescriber",
+    "_meta": {
+      "title": "🦙 Ollama Text Describer 🦙"
+    }
+  },
+  "237": {
+    "inputs": {
+      "text": "Your task is to conceptualize and elaborate on the design of a <target>.\n\nYour description should paint a vivid picture of the <target> for someone who cannot see it directly but wishes to understand its essence fully.\n\nNow please follow bellow principle to start design."
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "TextInput_Design_Content"
+    }
+  },
+  "243": {
+    "inputs": {
+      "text": [
+        "232",
+        0
+      ],
+      "prepend_text": "",
+      "append_text": "",
+      "replace_find_mode": "normal",
+      "replace_find": "*",
+      "replace_with": ""
+    },
+    "class_type": "TextTransformer",
+    "_meta": {
+      "title": "📝 Text Transformer 📝"
+    }
+  },
+  "244": {
+    "inputs": {
+      "text": [
+        "264",
+        0
+      ],
+      "prepend_text": "",
+      "append_text": "",
+      "replace_find_mode": "normal",
+      "replace_find": "*",
+      "replace_with": ""
+    },
+    "class_type": "TextTransformer",
+    "_meta": {
+      "title": "📝 Text Transformer 📝"
+    }
+  },
+  "245": {
+    "inputs": {
+      "text": "Now you are a prompt writer of stable diffusion. Please convert the given text into the format of   stable diffusion prompt following bellow guideline:\n\n- Reply in plain text format. without extension and special symbols, except replacing spaces with underscores.\n- Prompt should always be written in English, regardless of the input language. Please provide the prompts in English.\n- Each prompt should consist of a description of the scene followed by modifiers divided by commas.\n- When generating descriptions, focus on portraying the visual elements rather than delving into abstract psychological and emotional aspects. Provide clear and concise details that vividly depict the scene and its composition, capturing the tangible elements that make up the setting.\n- The modifiers should alter the mood, style, lighting, and other aspects of the scene.\n- Multiple modifiers can be used to provide more specific details.\n\nHere is the reply template you should follow:\n\nHere’s a formula for a Stable Diffusion image prompt: An image of [adjective] [subject] [doing action], [creative lighting style], detailed, realistic, trending on artstation, in style of [famous artist 1], [famous artist 2], [famous artist 3].\n\nNow, here is the text for converting into stable diffusion prompt:\n\n\n"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "TextInput_SD-prompt-convert"
+    }
+  },
+  "246": {
+    "inputs": {
+      "text": "Now you are a prompt writer of stable diffusion. Please convert the given text into the format of   stable diffusion prompt following bellow guideline:\n\n- Reply in plain text format. without extension and special symbols, except replacing spaces with underscores.\n- Prompt should always be written in English, regardless of the input language. Please provide the prompts in English.\n- Each prompt should consist of a description of the scene followed by modifiers divided by commas.\n- When generating descriptions, focus on portraying the visual elements rather than delving into abstract psychological and emotional aspects. Provide clear and concise details that vividly depict the scene and its composition, capturing the tangible elements that make up the setting.\n- The modifiers should alter the mood, style, lighting, and other aspects of the scene.\n- Multiple modifiers can be used to provide more specific details.\n\nHere is the reply template you should follow:\n\nAn image of [adjective] [subject] [doing action], [creative lighting style], detailed, realistic, trending on artstation, in style of [famous artist 1], [famous artist 2], [famous artist 3].\n\nThe [subject] is characterized by [additional descriptive elements, such as color, texture, material, and any other notable features]. Surrounding elements in the scene provide context and enhance the overall narrative, including [additional surrounding elements]. This image should reflect a style that is trending on ArtStation, and be influenced by the artistic styles of [famous artist 1], [famous artist 2], and [famous artist 3]. The overall composition should evoke [specific emotions or themes], ensuring a cohesive and captivating visual experience.\n\nThe reply limitation is 150 tokens.\n\n\n\n\n"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "TextInput_SD-prompt-convert"
+    }
+  },
+  "248": {
+    "inputs": {
+      "text": [
+        "285",
+        0
+      ],
+      "prepend_text": "Now, here is the text for converting into stable diffusion prompt:",
+      "append_text": "",
+      "replace_find_mode": "normal",
+      "replace_find": "*",
+      "replace_with": ""
+    },
+    "class_type": "TextTransformer",
+    "_meta": {
+      "title": "📝 Text Transformer 📝"
+    }
+  },
+  "250": {
+    "inputs": {
+      "images": [
+        "102",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "251": {
+    "inputs": {
+      "text": "gemma2:9b-instruct-q4_0"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "TextInput_custom_model"
+    }
+  },
+  "259": {
+    "inputs": {
+      "model": "llava-llama3:8b (Q4_K_M, 5.5GB)",
+      "custom_model": "minicpm-v:8b-2.6-q4_0",
+      "api_host": "http://localhost:11434",
+      "timeout": 300,
+      "temperature": 0.7000000000000001,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_penalty": 1.1,
+      "seed_number": [
+        "206",
+        3
+      ],
+      "max_tokens": 4000,
+      "keep_model_alive": 0,
+      "system_context": [
+        "62",
+        0
+      ],
+      "prompt": [
+        "230",
+        0
+      ],
+      "images": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "OllamaImageDescriber",
+    "_meta": {
+      "title": "🦙 Ollama Image Describer 🦙"
+    }
+  },
+  "264": {
+    "inputs": {
+      "model": "qwen2:0.5b (Q4_0, 352MB)",
+      "custom_model": [
+        "251",
+        0
+      ],
+      "api_host": "http://localhost:11434",
+      "timeout": 300,
+      "temperature": 0.5,
+      "top_k": 40,
+      "top_p": 0.9,
+      "repeat_penalty": 1.1,
+      "seed_number": 42,
+      "max_tokens": 50,
+      "keep_model_alive": -1,
+      "system_context": [
+        "193",
+        0
+      ],
+      "prompt": [
+        "285",
+        0
+      ]
+    },
+    "class_type": "OllamaTextDescriber",
+    "_meta": {
+      "title": "🦙 Ollama Text Describer 🦙"
+    }
+  },
+  "266": {
+    "inputs": {
+      "save_path": [
+        "267",
+        0
+      ],
+      "mesh": [
+        "189",
+        0
+      ]
+    },
+    "class_type": "[Comfy3D] Save 3D Mesh",
+    "_meta": {
+      "title": "Save 3D Mesh"
+    }
+  },
+  "267": {
+    "inputs": {
+      "text": [
+        "281",
+        0
+      ],
+      "show_text": "AI-Artist\\3D-Bionic-Product-Designer\\24-11-04\\CoralLightChair_241104203220.obj"
+    },
+    "class_type": "ShowTextForGPT",
+    "_meta": {
+      "title": "Show Text ♾️MixlabApp"
+    }
+  },
+  "268": {
+    "inputs": {
+      "mesh_file_path": [
+        "266",
+        0
+      ],
+      "preview3d": null
+    },
+    "class_type": "[Comfy3D] Preview 3DMesh",
+    "_meta": {
+      "title": "Preview 3DMesh"
+    }
+  },
+  "269": {
+    "inputs": {
+      "text": [
+        "266",
+        0
+      ],
+      "show_text": "D:\\01_DL\\ComfyUI_windows_portable\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-04\\CoralLightChair_241104203220.obj"
+    },
+    "class_type": "ShowTextForGPT",
+    "_meta": {
+      "title": "Show Text ♾️MixlabApp"
+    }
+  },
+  "270": {
+    "inputs": {
+      "output_path": [
+        "280",
+        0
+      ],
+      "filename_prefix": [
+        "204",
+        0
+      ],
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 85,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "prefix_as_filename",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "190",
+        1
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "RM_backgroud-Image Save"
+    }
+  },
+  "277": {
+    "inputs": {
+      "code_input": "from datetime import datetime\n\ndef get_timestamp():\n    # 获取当前时间并格式化\n    return datetime.now().strftime('%y%m%d%H%M%S')\n\n# 使用示例\ntimestamp = get_timestamp()\nprint(timestamp)  # 输出格式如: 241031235959\noutputs[0] = timestamp ",
+      "file": "./res/hello.py",
+      "use_file": false
+    },
+    "class_type": "FL_CodeNode",
+    "_meta": {
+      "title": "FL Code 秒时间戳"
+    }
+  },
+  "278": {
+    "inputs": {
+      "anything": [
+        "266",
+        0
+      ]
+    },
+    "class_type": "easy cleanGpuUsed",
+    "_meta": {
+      "title": "Clean GPU Used"
+    }
+  },
+  "279": {
+    "inputs": {
+      "code_input": "from datetime import datetime\n\ndef get_formatted_date(separator=\"-\"):\n    # 使用指定的分隔符格式化日期\n    return datetime.now().strftime(f'%y{separator}%m{separator}%d')\n\n# 使用示例\ndate_str = get_formatted_date()\nprint(date_str)  # 输出格式如: 24-10-31\noutputs[0] = date_str \n\n",
+      "file": "./res/hello.py",
+      "use_file": false
+    },
+    "class_type": "FL_CodeNode",
+    "_meta": {
+      "title": "FL Code 日时间戳"
+    }
+  },
+  "280": {
+    "inputs": {
+      "delimiter": "",
+      "clean_whitespace": "false",
+      "text_a": [
+        "202",
+        0
+      ],
+      "text_b": [
+        "279",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "generate day folder\n"
+    }
+  },
+  "281": {
+    "inputs": {
+      "delimiter": "",
+      "clean_whitespace": "false",
+      "text_a": [
+        "280",
+        0
+      ],
+      "text_b": [
+        "283",
+        0
+      ],
+      "text_c": [
+        "207",
+        0
+      ],
+      "text_d": [
+        "201",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Generate_3D_path"
+    }
+  },
+  "282": {
+    "inputs": {
+      "output_path": [
+        "280",
+        0
+      ],
+      "filename_prefix": [
+        "207",
+        0
+      ],
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 85,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "prefix_as_filename",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "102",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "2D_Gen-Image Save"
+    }
+  },
+  "283": {
+    "inputs": {
+      "text": "\\"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "Text Input ♾️Mixlab"
+    }
+  },
+  "284": {
+    "inputs": {
+      "text": [
+        "259",
+        0
+      ],
+      "show_text": "**Identification of the Biological Feature**\n\nThe biological feature I have chosen from coral is its structural complexity and resilience. Coral reefs are composed of intricate branching structures known as polyps, which collectively form a robust ecosystem that can withstand harsh environmental conditions.\n\n**Hypothesis Development**\n\nCoral's structural complexity could provide an innovative approach to architectural design by incorporating organic forms into built environments. The intertwining branches found in coral structures demonstrate how nature has evolved efficient ways to distribute stress and maintain stability within the reef framework. Incorporating these principles into architecture might result in more resilient buildings capable of withstanding natural disasters such as earthquakes or hurricanes.\n\n**Application Methodology**\n\nTo systematically integrate this biological feature, architects could study corals closely to understand their growth patterns and structural organization. This knowledge can then be applied through computational simulations that replicate the behavior of coral polyps within a building's framework. The design process would involve creating models based on these principles which mimic nature’s ability to adapt and respond dynamically under varying conditions.\n\n**Potential Impact**\n\nImplementing this bio-inspired approach could significantly impact traditional architectural practices by promoting sustainability, reducing material waste, improving resilience against natural disasters, enhancing aesthetic appeal through organic forms, and fostering healthier urban ecosystems. However, challenges may arise in terms of translating complex biological structures into practical building systems while maintaining the desired functionality.\n\nBy blending art with nature’s wisdom, we aim to create innovative solutions that not only enhance human well-being but also preserve our environment for future generations."
+    },
+    "class_type": "ShowTextForGPT",
+    "_meta": {
+      "title": "Show Text ♾️MixlabApp"
+    }
+  },
+  "285": {
+    "inputs": {
+      "text": [
+        "229",
+        0
+      ],
+      "show_text": "Imagine a chair sculpted from living light, its form echoing the intricate branches of a coral reef. This isn't a solid piece of furniture, but a delicate latticework woven from translucent fibers, each glowing with a soft, ethereal luminescence. \n\nInstead of a rigid backrest, the chair offers a continuous curve that gently cradles your spine. The seat itself is formed by a series of interconnected pods, resembling miniature coral polyps, each pulsing with a warm, inviting glow.  These pods are both comfortable and supportive, conforming to your body's contours while offering subtle pressure points that promote circulation and relaxation.\n\nThe chair doesn't stand on bulky legs, but rather floats gracefully above the ground, supported by slender tendrils that mimic coral branches reaching for sunlight. These delicate supports twist and turn organically, lending a sense of fluidity and movement to the entire piece.\n\nAs you sit in this luminous coral chair, you feel a sense of connection to nature's intricate beauty. The gentle pulsing light soothes your senses, while the organic forms envelop you in a feeling of safety and comfort. This isn't just a chair; it's a living sculpture, a fusion of art and technology that celebrates the resilience and wonder of the natural world.\n\n\nThis design concept draws inspiration from coral's structural complexity and resilience, employing:\n\n* **Interconnected Pods:** Mimicking coral polyps, these provide both comfort and support while offering subtle pressure points for relaxation.\n* **Translucent Fibers:**  Woven into a delicate latticework that allows light to pass through, creating a luminous and ethereal effect.\n* **Organic Supports:** Slender tendrils resembling coral branches provide graceful and dynamic support for the chair.\n* **Glowing Luminescence:** Inspired by bioluminescence found in some corals, the chair emits a soft, inviting glow that enhances its aesthetic appeal and creates a calming ambiance.\n\n\n\nThis design aims to create a truly unique and immersive experience, blurring the lines between furniture and art while promoting a deeper appreciation for the beauty and resilience of nature."
+    },
+    "class_type": "ShowTextForGPT",
+    "_meta": {
+      "title": "Show Text ♾️MixlabApp"
+    }
+  },
+  "286": {
+    "inputs": {
+      "text": [
+        "243",
+        0
+      ],
+      "show_text": "An image of a  chair sculpted from living light, delicate latticework woven from translucent fibers, glowing with soft luminescence, coral reef branches, continuous curve backrest, interconnected pods resembling miniature coral polyps, slender tendrils supporting the chair, floating above the ground. fantasy art, cinematic lighting, trending on artstation, in style of artgerm, greg rutkowski, wlop. \n\n\n"
+    },
+    "class_type": "ShowTextForGPT",
+    "_meta": {
+      "title": "Show Text ♾️MixlabApp"
+    }
+  },
+  "287": {
+    "inputs": {
+      "code_input": "import json\nimport os\nfrom collections import OrderedDict\n\ndef save_inputs_to_json(input1, input2, input3, output1, output2, output3, file_path):\n    # 使用OrderedDict来控制JSON字段的顺序\n    data = OrderedDict([\n        (\"prompt1\", input1),\n        (\"output1\", output1),\n        (\"prompt2\", input2),\n        (\"output2\", output2),\n        (\"prompt3\", input3),\n        (\"output3\", output3)\n    ])\n    \n    try:\n        # 确保目标文件夹存在\n        os.makedirs(os.path.dirname(file_path), exist_ok=True)\n        \n        # 写入JSON文件\n        with open(file_path, 'w', encoding='utf-8') as f:\n            json.dump(data, f, indent=4, ensure_ascii=False)\n        print(f\"数据已成功保存到: {file_path}\")\n        \n    except Exception as e:\n        print(f\"保存文件时发生错误: {str(e)}\")\n\n\n    \n# 指定保存路径\nsave_path = inputs[6]\n# 保存数据\nsave_inputs_to_json(\n    inputs[0], inputs[2], inputs[4],\n    inputs[1], inputs[3], inputs[5],\n    save_path\n)\n \noutputs[0] = save_path\n",
+      "file": "./res/hello.py",
+      "use_file": false,
+      "0_string": [
+        "76",
+        0
+      ],
+      "1_string": [
+        "284",
+        0
+      ],
+      "2_result_text": [
+        "86",
+        0
+      ],
+      "3_string": [
+        "285",
+        0
+      ],
+      "4_string": [
+        "246",
+        0
+      ],
+      "5_string": [
+        "286",
+        0
+      ],
+      "6_string": [
+        "291",
+        0
+      ]
+    },
+    "class_type": "FL_CodeNode",
+    "_meta": {
+      "title": "FL Code Node"
+    }
+  },
+  "288": {
+    "inputs": {
+      "text": [
+        "287",
+        0
+      ],
+      "show_text": ".\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-04\\CoralLightChair_241104203220.json"
+    },
+    "class_type": "ShowTextForGPT",
+    "_meta": {
+      "title": "Show Text ♾️MixlabApp"
+    }
+  },
+  "289": {
+    "inputs": {
+      "delimiter": "",
+      "clean_whitespace": "false",
+      "text_a": [
+        "280",
+        0
+      ],
+      "text_b": [
+        "283",
+        0
+      ],
+      "text_c": [
+        "207",
+        0
+      ],
+      "text_d": [
+        "290",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "generate json path\n"
+    }
+  },
+  "290": {
+    "inputs": {
+      "text": ".json"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "Text Input ♾️Mixlab"
+    }
+  },
+  "291": {
+    "inputs": {
+      "delimiter": "",
+      "clean_whitespace": "false",
+      "text_a": [
+        "292",
+        0
+      ],
+      "text_b": [
+        "289",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "generate json path\n"
+    }
+  },
+  "292": {
+    "inputs": {
+      "text": ".\\ComfyUI\\output\\"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "Text Input ♾️Mixlab"
+    }
+  },
+  "293": {
+    "inputs": {
+      "output_path": [
+        "280",
+        0
+      ],
+      "filename_prefix": [
+        "294",
+        0
+      ],
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 85,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "prefix_as_filename",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Bio_ref-Image Save"
+    }
+  },
+  "294": {
+    "inputs": {
+      "delimiter": "",
+      "clean_whitespace": "false",
+      "text_a": [
+        "207",
+        0
+      ],
+      "text_b": [
+        "295",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "generate transparent file name\n"
+    }
+  },
+  "295": {
+    "inputs": {
+      "text": "-ref"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "Text Input ♾️Mixlab"
+    }
+  },
+  "303": {
+    "inputs": {
+      "text": [
+        "282",
+        1
+      ],
+      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-04\\\\CoralLightChair_241104203220.png']"
+    },
+    "class_type": "ShowTextForGPT",
+    "_meta": {
+      "title": "Show Text ♾️MixlabApp"
+    }
+  },
+  "305": {
+    "inputs": {
+      "text": [
+        "293",
+        1
+      ],
+      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-04\\\\CoralLightChair_241104203220-ref.png']"
+    },
+    "class_type": "ShowTextForGPT",
+    "_meta": {
+      "title": "Show Text ♾️MixlabApp"
+    }
+  },
+  "306": {
+    "inputs": {
+      "text": [
+        "270",
+        1
+      ],
+      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-04\\\\CoralLightChair_241104203220-TR.png']"
+    },
+    "class_type": "ShowTextForGPT",
+    "_meta": {
+      "title": "Show Text ♾️MixlabApp"
+    }
+  }
+}
