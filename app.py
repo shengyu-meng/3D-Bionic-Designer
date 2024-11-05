@@ -54,6 +54,9 @@ def get_history(prompt_id):
 def generate_design(creature_text, design_object, seed, input_image):
     """Main generation function with proper websocket handling"""
     try:
+        # 在开始时显示加载提示
+        yield "Generating...", "Generating...", None, None
+        
         # Create new websocket connection for each request
         client_id = str(uuid.uuid4())
         ws = websocket.WebSocket()
@@ -84,6 +87,12 @@ def generate_design(creature_text, design_object, seed, input_image):
         start_time = time.time()
         timeout = 300
 
+        # 跟踪每个输出的状态
+        text1_done = False
+        text2_done = False
+        image_done = False
+        obj_done = False
+
         while True:
             if time.time() - start_time > timeout:
                 return "Operation timed out", "Operation timed out", None, None
@@ -93,32 +102,40 @@ def generate_design(creature_text, design_object, seed, input_image):
                 if isinstance(out, str):
                     message = json.loads(out)
                     
-                    if message['type'] == 'progress':
-                        data = message['data']
-                        print(f'Step: {data["value"]} of {data["max"]}')
-                    
-                    elif message['type'] == 'executed':
+                    if message['type'] == 'executed':
                         data = message['data']
                         current_node = data['node']
 
                         if current_node == '284':  # 设计假设文本
                             try:               
                                 text1 = message['data']['output']['text'][0]
-                                yield text1, gr.update(), gr.update(), gr.update()
+                                text1_done = True
+                                yield (text1, 
+                                      "Generating..." if not text2_done else gr.update(), 
+                                      None if not image_done else gr.update(), 
+                                      None if not obj_done else gr.update())
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
                                 
                         elif current_node == '285':  # 视觉描述文本
                             try:               
                                 text2 = message['data']['output']['text'][0]
-                                yield gr.update(), text2, gr.update(), gr.update()
+                                text2_done = True
+                                yield (text1 if text1_done else "Generating...", 
+                                      text2,
+                                      None if not image_done else gr.update(), 
+                                      None if not obj_done else gr.update())
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
                                 
                         elif current_node == '282':  # 图片输出
                             try:               
                                 latest_image = message['data']['output']['files'][0]
-                                yield gr.update(), gr.update(), latest_image, gr.update()
+                                image_done = True
+                                yield (text1 if text1_done else "Generating...", 
+                                      text2 if text2_done else "Generating...",
+                                      latest_image, 
+                                      None if not obj_done else gr.update())
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
                                 
@@ -128,7 +145,11 @@ def generate_design(creature_text, design_object, seed, input_image):
                                 if latest_obj:
                                     try:
                                         latest_obj = mesh_convert(latest_obj)
-                                        yield gr.update(), gr.update(), gr.update(), latest_obj
+                                        obj_done = True
+                                        yield (text1 if text1_done else "Generating...", 
+                                              text2 if text2_done else "Generating...",
+                                              latest_image if image_done else None, 
+                                              latest_obj)
                                     except Exception as e:
                                         print(f"Error converting mesh: {e}")
                             except Exception as e:
@@ -170,19 +191,20 @@ ensure_directories()
 with gr.Blocks() as demo:
     # gr.Markdown(HEADER)
     with gr.Row(variant="panel"):
-        with gr.Column():
+        # 左侧列设置较小的scale值
+        with gr.Column(scale=1):
+            input_image = gr.Image(label="Reference Image",height=300)
             creature_text = gr.Textbox(label="Reference Creature", lines=1)
             design_object = gr.Textbox(label="Design target object", lines=1)
             seed = gr.Slider(value=0, minimum=0, maximum=9999, step=1)
             submit = gr.Button("Generate", elem_id="generate", variant="primary")
-        with gr.Column():
-            input_image = gr.Image(label="Reference Image",height=300)
-    with gr.Row(variant="panel"):
-        output_text1 = gr.Textbox(label="Design hypothesis (integrates biological feacture with design objectives)", lines=8,interactive=False)
-        output_text2 = gr.Textbox(label="Visual Description of Design", lines=8,interactive=False)
-    with gr.Row(variant="panel"):
-        output_image = gr.Image(label="Output Image", interactive=False)
-        output_model = gr.Model3D(label="Output Model", interactive=False)
+        # 中间和右侧列设置较大的scale值
+        with gr.Column(scale=2):
+            output_text1 = gr.Textbox(label="Design hypothesis", lines=8,interactive=False)
+            output_text2 = gr.Textbox(label="Visual Description of Design", lines=8,interactive=False)
+        with gr.Column(scale=2):
+            output_image = gr.Image(label="Output Image", interactive=False)
+            output_model = gr.Model3D(label="Output Model", interactive=False)
     
     submit.click(
         fn=generate_design,
