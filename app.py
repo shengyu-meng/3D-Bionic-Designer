@@ -92,6 +92,8 @@ def generate_design(creature_text, design_object, seed, input_image):
                 out = ws.recv()
                 if isinstance(out, str):
                     message = json.loads(out)
+                    #wip
+                    print("message=", message)
                     
                     # Handle progress updates
                     if message['type'] == 'progress':
@@ -99,28 +101,18 @@ def generate_design(creature_text, design_object, seed, input_image):
                         print(f'Step: {data["value"]} of {data["max"]}')
                         
                     # Handle execution completion
-                    elif message['type'] == 'executing':
-                        data = message['data']
-                        
-                        # # wip
-                        # if current_node == '303':  # 判断当前节点是否为保存图片的节点
-                        #     images_output = output_images.get(current_node, [])  # 获取当前节点已保存的图片列表
-                        #     # WebSocket传输的图片数据前8个字节是二进制消息头
-                        #     # 前8个字节包含了消息类型和数据长度等元数据信息
-                        #     # out[8:]表示跳过这8个字节的消息头，只获取实际的图片二进制数据
-                        #     images_output.append(out[8:])  # 将接收到的图片数据(跳过8字节消息头)添加到列表中
-                        #     output_images[current_node] = images_output  # 更新输出图片字典中的当前节点的图片列表
-                                    
+                    if message['type'] == 'executing': 
+                        data = message['data'] 
                         if data['node'] is None and data['prompt_id'] == prompt_id:
                             time.sleep(1)  # Wait for file writes to complete
                             
-                            # Get outputs
-                        
-                            history = get_history(prompt_id)[prompt_id]
-                            latest_image = history['outputs']['282']['files'][0]
-                            text1 = history['outputs']['284']['text'][0]
-                            text2 = history['outputs']['285']['text'][0]
-                            latest_obj = history['outputs']['269']['text'][0]
+                            ## Get outputs from history
+                            # history = get_history(prompt_id)[prompt_id]
+                            # text1 = history['outputs']['284']['text'][0]
+                            # text2 = history['outputs']['285']['text'][0]
+                            # latest_image = history['outputs']['282']['files'][0]
+                            # latest_obj = history['outputs']['269']['text'][0]
+                            
                             if latest_obj:
                                 try:
                                     latest_obj = mesh_convert(latest_obj)
@@ -128,6 +120,40 @@ def generate_design(creature_text, design_object, seed, input_image):
                                     print(f"Error converting mesh: {e}")
                                     latest_obj = None
                             return text1, text2, latest_image, latest_obj
+
+                    elif message['type'] == 'executed':
+                        data = message['data']
+                        current_node = data['node']  # Update current_node from message data
+                        
+                        if current_node == '284':  # Check for text output node
+                            try:               
+                                text1 = message['data']['output']['text'][0]
+                            except Exception as e:
+                                print(f"Error accessing output: {e}")
+                                print(f"Message structure: {message}")  # Debug message structure
+                                text1 = None
+                        if current_node == '285':  # Check for text output node
+                            try:               
+                                text2 = message['data']['output']['text'][0]
+                            except Exception as e:
+                                print(f"Error accessing output: {e}")
+                                print(f"Message structure: {message}")  # Debug message structure
+                                text2 = None
+                        if current_node == '282':  # Check for text output node
+                            try:               
+                                latest_image = message['data']['output']['files'][0]
+                            except Exception as e:
+                                print(f"Error accessing output: {e}")
+                                print(f"Message structure: {message}")  # Debug message structure
+                                latest_image = None
+                        if current_node == '269':  # Check for text output node
+                            try:               
+                                latest_obj = message['data']['output']['text'][0]
+                            except Exception as e:
+                                print(f"Error accessing output: {e}")
+                                print(f"Message structure: {message}")  # Debug message structure
+                                latest_obj = None
+                        
 
             except websocket.WebSocketException as e:
                 print(f"WebSocket error: {e}")
@@ -174,6 +200,8 @@ with gr.Blocks() as demo:
         output_model = gr.Model3D(label="Output Model", interactive=False)
     submit.click(fn=generate_design, inputs=[creature_text, design_object, seed, input_image], \
                     outputs=[output_text1, output_text2, output_image, output_model])
+    
 # demo.queue(max_size=10)
 # demo.launch()
-demo.launch(server_name="0.0.0.0", server_port=7860, share=True, allowed_paths=[comfyui_output_path])
+# demo.launch(server_name="0.0.0.0", server_port=7860, share=True, allowed_paths=[comfyui_output_path])
+demo.launch(allowed_paths=[comfyui_output_path])
