@@ -80,10 +80,10 @@ def generate_design(creature_text, design_object, seed, input_image):
 
         # Queue prompt and get prompt_id
         prompt_id = queue_prompt(prompt, client_id)['prompt_id']
-        current_node = ""  # 当前节点的名称
+        current_node = ""
         start_time = time.time()
-        timeout = 300  # 5 minutes timeout
-        
+        timeout = 300
+
         while True:
             if time.time() - start_time > timeout:
                 return "Operation timed out", "Operation timed out", None, None
@@ -92,79 +92,64 @@ def generate_design(creature_text, design_object, seed, input_image):
                 out = ws.recv()
                 if isinstance(out, str):
                     message = json.loads(out)
-                    #wip
-                    print("message=", message)
                     
-                    # Handle progress updates
                     if message['type'] == 'progress':
                         data = message['data']
                         print(f'Step: {data["value"]} of {data["max"]}')
-                        
-                    # Handle execution completion
-                    if message['type'] == 'executing': 
-                        data = message['data'] 
-                        if data['node'] is None and data['prompt_id'] == prompt_id:
-                            time.sleep(1)  # Wait for file writes to complete
-                            
-                            ## Get outputs from history
-                            # history = get_history(prompt_id)[prompt_id]
-                            # text1 = history['outputs']['284']['text'][0]
-                            # text2 = history['outputs']['285']['text'][0]
-                            # latest_image = history['outputs']['282']['files'][0]
-                            # latest_obj = history['outputs']['269']['text'][0]
-                            
-                            if latest_obj:
-                                try:
-                                    latest_obj = mesh_convert(latest_obj)
-                                except Exception as e:
-                                    print(f"Error converting mesh: {e}")
-                                    latest_obj = None
-                            return text1, text2, latest_image, latest_obj
-
+                    
                     elif message['type'] == 'executed':
                         data = message['data']
-                        current_node = data['node']  # Update current_node from message data
-                        
-                        if current_node == '284':  # Check for text output node
+                        current_node = data['node']
+
+                        if current_node == '284':  # 设计假设文本
                             try:               
                                 text1 = message['data']['output']['text'][0]
+                                yield text1, gr.update(), gr.update(), gr.update()
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
-                                print(f"Message structure: {message}")  # Debug message structure
-                                text1 = None
-                        if current_node == '285':  # Check for text output node
+                                
+                        elif current_node == '285':  # 视觉描述文本
                             try:               
                                 text2 = message['data']['output']['text'][0]
+                                yield gr.update(), text2, gr.update(), gr.update()
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
-                                print(f"Message structure: {message}")  # Debug message structure
-                                text2 = None
-                        if current_node == '282':  # Check for text output node
+                                
+                        elif current_node == '282':  # 图片输出
                             try:               
                                 latest_image = message['data']['output']['files'][0]
+                                yield gr.update(), gr.update(), latest_image, gr.update()
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
-                                print(f"Message structure: {message}")  # Debug message structure
-                                latest_image = None
-                        if current_node == '269':  # Check for text output node
+                                
+                        elif current_node == '269':  # 3D模型输出
                             try:               
                                 latest_obj = message['data']['output']['text'][0]
+                                if latest_obj:
+                                    try:
+                                        latest_obj = mesh_convert(latest_obj)
+                                        yield gr.update(), gr.update(), gr.update(), latest_obj
+                                    except Exception as e:
+                                        print(f"Error converting mesh: {e}")
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
-                                print(f"Message structure: {message}")  # Debug message structure
-                                latest_obj = None
-                        
+
+                    # Handle execution completion
+                    if message['type'] == 'executing':
+                        data = message['data']
+                        if data['node'] is None and data['prompt_id'] == prompt_id:
+                            break
 
             except websocket.WebSocketException as e:
                 print(f"WebSocket error: {e}")
-                return "WebSocket error", "WebSocket error", None, None
+                yield "WebSocket error", "WebSocket error", None, None
+                break
                 
     except Exception as e:
         print(f"Error: {e}")
-        return f"Error: {str(e)}", "Error occurred", None, None
+        yield f"Error: {str(e)}", "Error occurred", None, None
         
     finally:
-        # Always close the websocket
         try:
             ws.close()
         except:
@@ -198,10 +183,14 @@ with gr.Blocks() as demo:
     with gr.Row(variant="panel"):
         output_image = gr.Image(label="Output Image", interactive=False)
         output_model = gr.Model3D(label="Output Model", interactive=False)
-    submit.click(fn=generate_design, inputs=[creature_text, design_object, seed, input_image], \
-                    outputs=[output_text1, output_text2, output_image, output_model])
     
-# demo.queue(max_size=10)
-# demo.launch()
-# demo.launch(server_name="0.0.0.0", server_port=7860, share=True, allowed_paths=[comfyui_output_path])
+    submit.click(
+        fn=generate_design,
+        inputs=[creature_text, design_object, seed, input_image],
+        outputs=[output_text1, output_text2, output_image, output_model],
+        api_name="generate"
+    )
+
+# 启动时启用队列
+demo.queue()
 demo.launch(allowed_paths=[comfyui_output_path])
