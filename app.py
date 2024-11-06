@@ -26,7 +26,7 @@ input_dir = os.path.abspath("./temp/input_temp")
 # 添加ComfyUI输出路径到允许路径列表
 comfyui_output_path = "D:/01_DL/ComfyUI_windows_portable/ComfyUI/output"
 
-workflow_file = os.path.abspath("./3D-Bionic-Product-Designer-V08_api.json")
+workflow_file = os.path.abspath("./3D-Bionic-Product-Designer-V09_API.json")
 
     
 def mesh_convert(input_file, output_file=None):
@@ -51,7 +51,7 @@ def get_history(prompt_id):
     with urllib.request.urlopen("http://{}/history/{}".format(server_address, prompt_id)) as response:
         return json.loads(response.read())
 
-def generate_design(creature_text, design_object, seed, input_image):
+def generate_design(creature_text, design_object, seed, input_image, gen_language):
     """Main generation function with proper websocket handling"""
     try:
         # 在开始时显示加载提示
@@ -72,6 +72,9 @@ def generate_design(creature_text, design_object, seed, input_image):
 
         if design_object is not None:
             prompt["172"]["inputs"]["text"] = design_object
+        
+        if gen_language is not None:
+            prompt["309"]["inputs"]["text"] = gen_language
 
         if input_image is not None:
             try:
@@ -132,12 +135,13 @@ def generate_design(creature_text, design_object, seed, input_image):
                 out = ws.recv()
                 if isinstance(out, str):
                     message = json.loads(out)
+                    # print(message)
                     
                     if message['type'] == 'executed':
                         data = message['data']
                         current_node = data['node']
 
-                        if current_node == '284':  # 设计假设文本
+                        if current_node == '315':  # 设计假设文本
                             try:               
                                 text1 = message['data']['output']['text'][0]
                                 text1_done = True
@@ -148,7 +152,7 @@ def generate_design(creature_text, design_object, seed, input_image):
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
                                 
-                        elif current_node == '285':  # 视觉描述文本
+                        elif current_node == '317':  # 视觉描述文本
                             try:               
                                 text2 = message['data']['output']['text'][0]
                                 text2_done = True
@@ -216,7 +220,7 @@ def ensure_directories():
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-# 在主��序开始时调用
+# 在主程序开始时调用
 ensure_directories()
 
 with gr.Blocks(css="""
@@ -251,14 +255,20 @@ with gr.Blocks(css="""
     with gr.Row(variant="panel"):
         # 侧列设置较小的scale值
         with gr.Column(scale=1):
-            gr.HTML('<div style="margin-bottom:0.5em">Bio Image / バイオイメージ / 生物图像</div>')
+            gr.HTML('<div style="margin-bottom:0.4em">Bio Image / バイオイメージ / 生物图像</div>')
             input_image = gr.Image(label="Bio Image", height=300)
-            gr.HTML('<div style="margin-bottom:0.5em">Bio Reference / バイオリファレンス / 生物参考</div>')
+            gr.HTML('<div style="margin-bottom:0.4em">Bio Reference / バイオリファレンス / 生物参考</div>')
             creature_text = gr.Textbox(label="Bio Reference", lines=1)
-            gr.HTML('<div style="margin-bottom:0.5em">Design Target / デザイン対象 / 设计目标</div>')
+            gr.HTML('<div style="margin-bottom:0.4em">Design Target / デザイン対象 / 设计目标</div>')
             design_object = gr.Textbox(label="Design Target", lines=1)
-            gr.HTML('<div style="margin-bottom:0.5em">Seed</div>')
+            gr.HTML('<div style="margin-bottom:0.4em">Seed</div>')
             seed = gr.Slider(label=None, value=0, minimum=0, maximum=9999, step=1)
+            gr.HTML('<div style="margin-bottom:0.4em">Generation Language / 生成言語 / 生成文本语言</div>')
+            gen_language = gr.Dropdown(
+                choices=["English", "Japanese", "Chinese"],
+                value="English",interactive=True,
+                label=None
+            )
             submit = gr.Button("Generate", elem_id="generate", variant="primary")
             
             # Add examples
@@ -292,7 +302,7 @@ with gr.Blocks(css="""
                 """)
     submit.click(
         fn=generate_design,
-        inputs=[creature_text, design_object, seed, input_image],
+        inputs=[creature_text, design_object, seed, input_image, gen_language],
         outputs=[output_text1, output_text2, output_image, output_model],
         api_name="generate"
     )

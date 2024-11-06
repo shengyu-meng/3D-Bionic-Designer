@@ -306,7 +306,7 @@
         "244",
         0
       ],
-      "DisplayText_Zho_0": "CoralLightChair"
+      "DisplayText_Zho_0": "Coralium_Chair"
     },
     "class_type": "DisplayText_Zho",
     "_meta": {
@@ -360,7 +360,7 @@
   },
   "206": {
     "inputs": {
-      "seed": 1121677064896413
+      "seed": 292920935574733
     },
     "class_type": "Seed",
     "_meta": {
@@ -405,11 +405,11 @@
       "max_tokens": 4000,
       "keep_model_alive": -1,
       "system_context": [
-        "86",
+        "311",
         0
       ],
       "prompt": [
-        "284",
+        "259",
         0
       ]
     },
@@ -428,6 +428,10 @@
       ],
       "text_b": [
         "65",
+        0
+      ],
+      "text_c": [
+        "308",
         0
       ]
     },
@@ -523,7 +527,7 @@
   },
   "246": {
     "inputs": {
-      "text": "Now you are a prompt writer of stable diffusion. Please convert the given text into the format of   stable diffusion prompt following bellow guideline:\n\n- Reply in plain text format. without extension and special symbols, except replacing spaces with underscores.\n- Prompt should always be written in English, regardless of the input language. Please provide the prompts in English.\n- Each prompt should consist of a description of the scene followed by modifiers divided by commas.\n- When generating descriptions, focus on portraying the visual elements rather than delving into abstract psychological and emotional aspects. Provide clear and concise details that vividly depict the scene and its composition, capturing the tangible elements that make up the setting.\n- The modifiers should alter the mood, style, lighting, and other aspects of the scene.\n- Multiple modifiers can be used to provide more specific details.\n\nHere is the reply template you should follow:\n\nAn image of [adjective] [subject] [doing action], [creative lighting style], detailed, realistic, trending on artstation, in style of [famous artist 1], [famous artist 2], [famous artist 3].\n\nThe [subject] is characterized by [additional descriptive elements, such as color, texture, material, and any other notable features]. Surrounding elements in the scene provide context and enhance the overall narrative, including [additional surrounding elements]. This image should reflect a style that is trending on ArtStation, and be influenced by the artistic styles of [famous artist 1], [famous artist 2], and [famous artist 3]. The overall composition should evoke [specific emotions or themes], ensuring a cohesive and captivating visual experience.\n\nThe reply limitation is 150 tokens.\n\n\n\n\n"
+      "text": "Now you are a prompt writer of stable diffusion. Please convert the given text into the format of stable diffusion prompt following bellow guideline in English:\n\n- Reply in plain text format. without extension and special symbols, except replacing spaces with underscores.\n- Prompt should always be written in English, regardless of the input language. Please provide the prompts in English.\n- Each prompt should consist of a description of the scene followed by modifiers divided by commas.\n- When generating descriptions, focus on portraying the visual elements rather than delving into abstract psychological and emotional aspects. Provide clear and concise details that vividly depict the scene and its composition, capturing the tangible elements that make up the setting.\n- The modifiers should alter the mood, style, lighting, and other aspects of the scene.\n- Multiple modifiers can be used to provide more specific details.\n\nHere is the reply template you should follow:\n\nAn image of [adjective] [subject] [doing action], [creative lighting style], detailed, realistic, trending on artstation, in style of [famous artist 1], [famous artist 2], [famous artist 3].\n\nThe [subject] is characterized by [additional descriptive elements, such as color, texture, material, and any other notable features]. Surrounding elements in the scene provide context and enhance the overall narrative, including [additional surrounding elements]. This image should reflect a style that is trending on ArtStation, and be influenced by the artistic styles of [famous artist 1], [famous artist 2], and [famous artist 3]. The overall composition should evoke [specific emotions or themes], ensuring a cohesive and captivating visual experience.\n\nThe reply limitation is 150 tokens. Your reply must be in English.\n\n\n\n\n"
     },
     "class_type": "TextInput_",
     "_meta": {
@@ -533,7 +537,7 @@
   "248": {
     "inputs": {
       "text": [
-        "285",
+        "229",
         0
       ],
       "prepend_text": "Now, here is the text for converting into stable diffusion prompt:",
@@ -585,7 +589,7 @@
       "max_tokens": 4000,
       "keep_model_alive": 0,
       "system_context": [
-        "62",
+        "310",
         0
       ],
       "prompt": [
@@ -623,7 +627,7 @@
         0
       ],
       "prompt": [
-        "285",
+        "229",
         0
       ]
     },
@@ -654,7 +658,7 @@
         "281",
         0
       ],
-      "show_text": "AI-Artist\\3D-Bionic-Product-Designer\\24-11-04\\CoralLightChair_241104203220.obj"
+      "show_text": "AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\Coralium_Chair_241106170709.obj"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -680,7 +684,7 @@
         "266",
         0
       ],
-      "show_text": "D:\\01_DL\\ComfyUI_windows_portable\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-04\\CoralLightChair_241104203220.obj"
+      "show_text": "D:\\01_DL\\ComfyUI_windows_portable\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\Coralium_Chair_241106170709.obj"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -702,7 +706,7 @@
       "filename_number_start": "false",
       "extension": "png",
       "dpi": 300,
-      "quality": 85,
+      "quality": 50,
       "optimize_image": "true",
       "lossless_webp": "false",
       "overwrite_mode": "prefix_as_filename",
@@ -811,7 +815,7 @@
       "filename_delimiter": "_",
       "filename_number_padding": 4,
       "filename_number_start": "false",
-      "extension": "png",
+      "extension": "jpg",
       "dpi": 300,
       "quality": 85,
       "optimize_image": "true",
@@ -840,39 +844,13 @@
       "title": "Text Input ♾️Mixlab"
     }
   },
-  "284": {
-    "inputs": {
-      "text": [
-        "259",
-        0
-      ],
-      "show_text": "**Identification of the Biological Feature**\n\nThe biological feature I have chosen from coral is its structural complexity and resilience. Coral reefs are composed of intricate branching structures known as polyps, which collectively form a robust ecosystem that can withstand harsh environmental conditions.\n\n**Hypothesis Development**\n\nCoral's structural complexity could provide an innovative approach to architectural design by incorporating organic forms into built environments. The intertwining branches found in coral structures demonstrate how nature has evolved efficient ways to distribute stress and maintain stability within the reef framework. Incorporating these principles into architecture might result in more resilient buildings capable of withstanding natural disasters such as earthquakes or hurricanes.\n\n**Application Methodology**\n\nTo systematically integrate this biological feature, architects could study corals closely to understand their growth patterns and structural organization. This knowledge can then be applied through computational simulations that replicate the behavior of coral polyps within a building's framework. The design process would involve creating models based on these principles which mimic nature’s ability to adapt and respond dynamically under varying conditions.\n\n**Potential Impact**\n\nImplementing this bio-inspired approach could significantly impact traditional architectural practices by promoting sustainability, reducing material waste, improving resilience against natural disasters, enhancing aesthetic appeal through organic forms, and fostering healthier urban ecosystems. However, challenges may arise in terms of translating complex biological structures into practical building systems while maintaining the desired functionality.\n\nBy blending art with nature’s wisdom, we aim to create innovative solutions that not only enhance human well-being but also preserve our environment for future generations."
-    },
-    "class_type": "ShowTextForGPT",
-    "_meta": {
-      "title": "Show Text ♾️MixlabApp"
-    }
-  },
-  "285": {
-    "inputs": {
-      "text": [
-        "229",
-        0
-      ],
-      "show_text": "Imagine a chair sculpted from living light, its form echoing the intricate branches of a coral reef. This isn't a solid piece of furniture, but a delicate latticework woven from translucent fibers, each glowing with a soft, ethereal luminescence. \n\nInstead of a rigid backrest, the chair offers a continuous curve that gently cradles your spine. The seat itself is formed by a series of interconnected pods, resembling miniature coral polyps, each pulsing with a warm, inviting glow.  These pods are both comfortable and supportive, conforming to your body's contours while offering subtle pressure points that promote circulation and relaxation.\n\nThe chair doesn't stand on bulky legs, but rather floats gracefully above the ground, supported by slender tendrils that mimic coral branches reaching for sunlight. These delicate supports twist and turn organically, lending a sense of fluidity and movement to the entire piece.\n\nAs you sit in this luminous coral chair, you feel a sense of connection to nature's intricate beauty. The gentle pulsing light soothes your senses, while the organic forms envelop you in a feeling of safety and comfort. This isn't just a chair; it's a living sculpture, a fusion of art and technology that celebrates the resilience and wonder of the natural world.\n\n\nThis design concept draws inspiration from coral's structural complexity and resilience, employing:\n\n* **Interconnected Pods:** Mimicking coral polyps, these provide both comfort and support while offering subtle pressure points for relaxation.\n* **Translucent Fibers:**  Woven into a delicate latticework that allows light to pass through, creating a luminous and ethereal effect.\n* **Organic Supports:** Slender tendrils resembling coral branches provide graceful and dynamic support for the chair.\n* **Glowing Luminescence:** Inspired by bioluminescence found in some corals, the chair emits a soft, inviting glow that enhances its aesthetic appeal and creates a calming ambiance.\n\n\n\nThis design aims to create a truly unique and immersive experience, blurring the lines between furniture and art while promoting a deeper appreciation for the beauty and resilience of nature."
-    },
-    "class_type": "ShowTextForGPT",
-    "_meta": {
-      "title": "Show Text ♾️MixlabApp"
-    }
-  },
   "286": {
     "inputs": {
       "text": [
         "243",
         0
       ],
-      "show_text": "An image of a  chair sculpted from living light, delicate latticework woven from translucent fibers, glowing with soft luminescence, coral reef branches, continuous curve backrest, interconnected pods resembling miniature coral polyps, slender tendrils supporting the chair, floating above the ground. fantasy art, cinematic lighting, trending on artstation, in style of artgerm, greg rutkowski, wlop. \n\n\n"
+      "show_text": "An image of a bioengineered, futuristic, coral reef inspired chair, intricate, detailed, realistic, trending on artstation, in style of Antoni Gaudí,  Frank Lloyd Wright, Studio Ghibli.\n\nThe Coralium chair is characterized by interwoven hexagonal panels made of a bio-composite material, vibrant blues fading into deep greens with hints of orange and purple. The cushions are sculpted from recycled materials, mimicking the soft texture of coral polyps. Surrounding elements include a base formed from three gently curving hexagonal panels and a single coral-like glass element dangling from the back. This image should reflect a style that is trending on ArtStation, and be influenced by the artistic styles of Antoni Gaudí, Frank Lloyd Wright, and Studio Ghibli. "
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -888,16 +866,16 @@
         "76",
         0
       ],
-      "1_string": [
-        "284",
+      "1_": [
+        "259",
         0
       ],
       "2_result_text": [
         "86",
         0
       ],
-      "3_string": [
-        "285",
+      "3_": [
+        "229",
         0
       ],
       "4_string": [
@@ -924,7 +902,7 @@
         "287",
         0
       ],
-      "show_text": ".\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-04\\CoralLightChair_241104203220.json"
+      "show_text": ".\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\Coralium_Chair_241106170709.json"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -1006,7 +984,7 @@
       "filename_delimiter": "_",
       "filename_number_padding": 4,
       "filename_number_start": "false",
-      "extension": "png",
+      "extension": "jpg",
       "dpi": 300,
       "quality": 85,
       "optimize_image": "true",
@@ -1059,7 +1037,7 @@
         "282",
         1
       ],
-      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-04\\\\CoralLightChair_241104203220.png']"
+      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\Coralium_Chair_241106170709.jpg']"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -1072,7 +1050,7 @@
         "293",
         1
       ],
-      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-04\\\\CoralLightChair_241104203220-ref.png']"
+      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\Coralium_Chair_241106170709-ref.jpg']"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -1085,11 +1063,108 @@
         "270",
         1
       ],
-      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-04\\\\CoralLightChair_241104203220-TR.png']"
+      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\Coralium_Chair_241106170709-TR.png']"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
       "title": "Show Text ♾️MixlabApp"
+    }
+  },
+  "307": {
+    "inputs": {
+      "text": "You must reply in *<language>* and markdown format.\n"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "TextInput_Agent-role"
+    }
+  },
+  "308": {
+    "inputs": {
+      "text": [
+        "307",
+        0
+      ],
+      "find": "<language>",
+      "replace": [
+        "309",
+        0
+      ]
+    },
+    "class_type": "Text Find and Replace",
+    "_meta": {
+      "title": "Text Find and Replace: Building type"
+    }
+  },
+  "309": {
+    "inputs": {
+      "text": "English"
+    },
+    "class_type": "TextInput_",
+    "_meta": {
+      "title": "TextInput_Languge-selection"
+    }
+  },
+  "310": {
+    "inputs": {
+      "delimiter": "/n ",
+      "clean_whitespace": "true",
+      "text_a": [
+        "62",
+        0
+      ],
+      "text_b": [
+        "308",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "311": {
+    "inputs": {
+      "delimiter": "/n",
+      "clean_whitespace": "true",
+      "text_a": [
+        "86",
+        0
+      ],
+      "text_b": [
+        "308",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "315": {
+    "inputs": {
+      "text": "### Identification of the Biological Feature: Hexagonal Structures in Coral Formation\nCoral is known for its remarkable ability to create intricate and highly efficient structures. One prominent feature observed in coral formation is their hexagonal patterns, which are a result of natural self-organization processes. These hexagonal arrangements provide several benefits such as stability, strength, and space efficiency.\n\n### Hypothesis Development:\nThe hypothesis developed here suggests that the use of hexagonal geometric shapes inspired by coral formations can significantly improve architectural design workflows in terms of sustainability, structural integrity, and material efficiency.\n\n1. **Sustainability**: By incorporating bio-inspired geometries into building materials, architects could potentially reduce their environmental impact. Hexagonal structures are known for using space efficiently without waste, which is an eco-friendly practice.\n2. **Structural Integrity**: The hexagonal pattern observed in coral provides a highly stable and strong framework due to its inherent geometry. Applying this principle can lead to the development of new construction techniques that enhance building durability and resistance against environmental forces like wind or earthquakes.\n\n### Application Methodology:\n1. **Material Development**: Research into biomimicry could result in innovative materials mimicking hexagonal structures, which would be lighter yet stronger than conventional alternatives.\n2. **Spatial Configuration**: Architects can use the principles of self-organization seen in coral to create efficient spatial layouts within buildings. This might involve designing spaces that naturally arrange themselves based on their functional requirements and environmental conditions.\n\n### Potential Impact:\nImplementing this bio-inspired approach could revolutionize traditional architectural design practices by fostering sustainability, increasing material efficiency, improving structural integrity, and promoting adaptability of designs to various environments./nThe use of hexagonal structures inspired by coral can improve sustainable building materials, enhance structural stability through self-organization principles seen in nature.",
+      "anything": [
+        "259",
+        0
+      ]
+    },
+    "class_type": "easy showAnything",
+    "_meta": {
+      "title": "Show Any"
+    }
+  },
+  "317": {
+    "inputs": {
+      "text": "## The Coralium Chair: \n\nImagine a chair that doesn't just sit, but seems to *grow* from the earth, its form echoing the intricate beauty of coral reefs. This is the Coralium chair.  \n\n**Structure:** Its frame isn't made of solid metal or wood, but of interwoven hexagonal panels, each delicately crafted from a bio-engineered composite material inspired by coral skeletons. These panels are lightweight yet incredibly strong, allowing for both elegance and resilience. The panels subtly curve inward, mirroring the natural growth patterns of coral, creating a sense of organic flow and inviting you to sink into its embrace.\n\n**Seating:** Cushions sculpted from recycled materials mimic the soft texture of coral polyps, providing unparalleled comfort and a tactile connection to nature. They are strategically placed within the hexagonal framework, maximizing both support and breathability. \n\n**Color & Texture:** The chair's surface is not uniform. It subtly shifts in color and texture, echoing the diverse hues and patterns found in coral reefs.  Imagine vibrant blues fading into deep greens, punctuated by hints of orange and purple, reminiscent of a sunlit underwater world. This interplay of colors creates a captivating visual experience that draws your eye and invites exploration.\n\n**Details:** \n\n* **Base:** The chair rests upon a base formed from three gently curving hexagonal panels, mimicking the foundation of a coral head.  This provides stability while maintaining an airy and elegant silhouette.\n* **Accent:** A single coral-like element, crafted from sustainably sourced glass, dangles subtly from the back of the chair, adding a touch of whimsy and serving as a reminder of the natural inspiration behind its design.\n\n**Experience:** Sitting in the Coralium chair is like being transported to an underwater oasis. The combination of comfortable cushioning, organic curves, and vibrant color creates a truly immersive sensory experience that fosters relaxation and contemplation. \n\n\nThe Coralium chair is not just furniture; it's a testament to the power of biomimicry, showcasing how nature's ingenuity can inspire innovative and sustainable design solutions.",
+      "anything": [
+        "229",
+        0
+      ]
+    },
+    "class_type": "easy showAnything",
+    "_meta": {
+      "title": "Show Any"
     }
   }
 }

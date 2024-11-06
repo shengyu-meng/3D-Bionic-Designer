@@ -1,0 +1,5927 @@
+{
+  "last_node_id": 319,
+  "last_link_id": 477,
+  "nodes": [
+    {
+      "id": 119,
+      "type": "Reroute",
+      "pos": {
+        "0": -1442.0374755859375,
+        "1": 5354.3212890625
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 45,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 143,
+          "label": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "SIGMAS",
+          "links": [
+            119
+          ],
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 120,
+      "type": "Reroute",
+      "pos": {
+        "0": -1102.0374755859375,
+        "1": 5194.3212890625
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 144,
+          "label": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CONDITIONING",
+          "links": [
+            117
+          ],
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 140,
+      "type": "Reroute",
+      "pos": {
+        "0": -1022.0375366210938,
+        "1": 5264.3212890625
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 165,
+          "label": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "SAMPLER",
+          "links": [
+            118
+          ],
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 175,
+      "type": "Reroute",
+      "pos": {
+        "0": -1903.092529296875,
+        "1": 4784.3486328125
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 224,
+          "label": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "CLIP",
+          "links": [
+            225,
+            226
+          ],
+          "slot_index": 0,
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 176,
+      "type": "Reroute",
+      "pos": {
+        "0": -1828.5565185546875,
+        "1": 4909.9951171875
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 227,
+          "label": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MODEL",
+          "links": [
+            228,
+            229
+          ],
+          "slot_index": 0,
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 98,
+      "type": "SDTurboScheduler",
+      "pos": {
+        "0": -2286.61376953125,
+        "1": 5122.48193359375
+      },
+      "size": {
+        "0": 359.6626281738281,
+        "1": 82
+      },
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 228,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            143
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "SIGMAS"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDTurboScheduler",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        5,
+        1
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 99,
+      "type": "SamplerCustom",
+      "pos": {
+        "0": -872.2086791992188,
+        "1": 4851.033203125
+      },
+      "size": {
+        "0": 355.20001220703125,
+        "1": 230
+      },
+      "flags": {},
+      "order": 64,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 229,
+          "slot_index": 0,
+          "label": "model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 200,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 117,
+          "slot_index": 2,
+          "label": "negative"
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 118,
+          "slot_index": 3,
+          "label": "sampler"
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 119,
+          "label": "sigmas"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 120,
+          "slot_index": 5,
+          "label": "latent_image"
+        },
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "link": 285,
+          "widget": {
+            "name": "noise_seed"
+          },
+          "label": "noise_seed"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            123
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "output"
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "denoised_output"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustom",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        true,
+        781258098153372,
+        "increment",
+        1.2
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 168,
+      "type": "LoraLoader",
+      "pos": {
+        "0": -2276.61376953125,
+        "1": 4868.48193359375
+      },
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 222,
+          "label": "model"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 223,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            227
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            224
+          ],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "CLIP"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "SDXL Lora\\sd_xl_dpo_lora_v1-128dim.safetensors",
+        1,
+        1
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 104,
+      "type": "EmptyLatentImage",
+      "pos": {
+        "0": -2736.3046875,
+        "1": 4989.96484375
+      },
+      "size": {
+        "0": 315,
+        "1": 318
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            156
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 97,
+      "type": "CheckpointLoaderSimple",
+      "pos": {
+        "0": -2750.473388671875,
+        "1": 4802.97216796875
+      },
+      "size": {
+        "0": 430.0001220703125,
+        "1": 99.0377426147461
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            222
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            223
+          ],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "CLIP"
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            125
+          ],
+          "slot_index": 2,
+          "shape": 3,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "1_SDXL\\sd_xl_turbo_1.0_fp16.safetensors"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 101,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": -1583.304931640625,
+        "1": 5033.96484375
+      },
+      "size": {
+        "0": 419.4183044433594,
+        "1": 101.98777770996094
+      },
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 226,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            144
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "blurry, text, watermark, signature, low quality, NSFW"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 100,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": -1595.304931640625,
+        "1": 4845.96484375
+      },
+      "size": {
+        "0": 421.4323425292969,
+        "1": 116.5868911743164
+      },
+      "flags": {},
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 225,
+          "label": "clip"
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 411,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            200
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "(seamless texture:1.15) of building facade texture, CGsociety, unreal engine, (tiled projection), blender 3D"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 131,
+      "type": "Reroute",
+      "pos": {
+        "0": -1227.304931640625,
+        "1": 5422.96484375
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 156,
+          "label": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "LATENT",
+          "links": [
+            120
+          ],
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 103,
+      "type": "Reroute",
+      "pos": {
+        "0": -1233.304931640625,
+        "1": 5480.96484375
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 125,
+          "label": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "VAE",
+          "links": [
+            124
+          ],
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 105,
+      "type": "KSamplerSelect",
+      "pos": {
+        "0": -2737.3046875,
+        "1": 5399.96484375
+      },
+      "size": {
+        "0": 416.1368408203125,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            165
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "SAMPLER"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "lcm"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 283,
+      "type": "TextInput_",
+      "pos": {
+        "0": 1920,
+        "1": 3290
+      },
+      "size": {
+        "0": 220.30191040039062,
+        "1": 76
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            397,
+            422
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextInput_",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "\\"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 201,
+      "type": "TextInput_",
+      "pos": {
+        "0": 1920,
+        "1": 3430
+      },
+      "size": {
+        "0": 220.30191040039062,
+        "1": 76
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            394
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextInput_",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        ".obj"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 245,
+      "type": "TextInput_",
+      "pos": {
+        "0": -508,
+        "1": 2339
+      },
+      "size": {
+        "0": 623.7045288085938,
+        "1": 350.9818115234375
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "TextInput_SD-prompt-convert",
+      "properties": {
+        "Node name for S&R": "TextInput_"
+      },
+      "widgets_values": [
+        "Now you are a prompt writer of stable diffusion. Please convert the given text into the format of   stable diffusion prompt following bellow guideline:\n\n- Reply in plain text format. without extension and special symbols, except replacing spaces with underscores.\n- Prompt should always be written in English, regardless of the input language. Please provide the prompts in English.\n- Each prompt should consist of a description of the scene followed by modifiers divided by commas.\n- When generating descriptions, focus on portraying the visual elements rather than delving into abstract psychological and emotional aspects. Provide clear and concise details that vividly depict the scene and its composition, capturing the tangible elements that make up the setting.\n- The modifiers should alter the mood, style, lighting, and other aspects of the scene.\n- Multiple modifiers can be used to provide more specific details.\n\nHere is the reply template you should follow:\n\nHere’s a formula for a Stable Diffusion image prompt: An image of [adjective] [subject] [doing action], [creative lighting style], detailed, realistic, trending on artstation, in style of [famous artist 1], [famous artist 2], [famous artist 3].\n\nNow, here is the text for converting into stable diffusion prompt:\n\n\n"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 279,
+      "type": "FL_CodeNode",
+      "pos": {
+        "0": 1060,
+        "1": 3650
+      },
+      "size": {
+        "0": 313.519775390625,
+        "1": 184
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_0",
+          "type": "*",
+          "links": [
+            382
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "output_1",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "output_2",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "output_3",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "FL Code 日时间戳",
+      "properties": {
+        "Node name for S&R": "FL_CodeNode-秒时间戳"
+      },
+      "widgets_values": [
+        "from datetime import datetime\n\ndef get_formatted_date(separator=\"-\"):\n    # 使用指定的分隔符格式化日期\n    return datetime.now().strftime(f'%y{separator}%m{separator}%d')\n\n# 使用示例\ndate_str = get_formatted_date()\nprint(date_str)  # 输出格式如: 24-10-31\noutputs[0] = date_str \n\n",
+        "./res/hello.py",
+        false
+      ],
+      "color": "#16727c",
+      "bgcolor": "#4F0074"
+    },
+    {
+      "id": 292,
+      "type": "TextInput_",
+      "pos": {
+        "0": 1130,
+        "1": 4090
+      },
+      "size": {
+        "0": 235.79641723632812,
+        "1": 76.00018310546875
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            427
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextInput_",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        ".\\ComfyUI\\output\\"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 267,
+      "type": "ShowTextForGPT",
+      "pos": {
+        "0": 3115,
+        "1": 3340
+      },
+      "size": {
+        "0": 210,
+        "1": 96
+      },
+      "flags": {},
+      "order": 67,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 387,
+          "widget": {
+            "name": "text"
+          }
+        },
+        {
+          "name": "output_dir",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "output_dir"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            374
+          ],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowTextForGPT",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        "AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\Coralium_Chair_241106170709.obj"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 189,
+      "type": "[Comfy3D] Switch Mesh Axis",
+      "pos": {
+        "0": 3219.68359375,
+        "1": 2851.84619140625
+      },
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 83,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mesh",
+          "type": "MESH",
+          "link": 256,
+          "label": "mesh"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "switched_mesh",
+          "type": "MESH",
+          "links": [
+            364
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "switched_mesh"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "[Comfy3D] Switch Mesh Axis",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "+y",
+        "+z",
+        "+x",
+        false,
+        1
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 195,
+      "type": "DisplayText_Zho",
+      "pos": {
+        "0": 1482,
+        "1": 2627
+      },
+      "size": {
+        "0": 445.20001220703125,
+        "1": 193.80506896972656
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 57,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 342,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            286
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "text"
+        }
+      ],
+      "title": "Short_file_name",
+      "properties": {
+        "Node name for S&R": "DisplayText_Zho"
+      },
+      "widgets_values": [
+        "",
+        "Coralium_Chair"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 277,
+      "type": "FL_CodeNode",
+      "pos": {
+        "0": 1058,
+        "1": 3311
+      },
+      "size": {
+        "0": 330.9541320800781,
+        "1": 184
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_0",
+          "type": "*",
+          "links": [
+            378
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "output_1",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "output_2",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "output_3",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "FL Code 秒时间戳",
+      "properties": {
+        "Node name for S&R": "FL_CodeNode-秒时间戳"
+      },
+      "widgets_values": [
+        "from datetime import datetime\n\ndef get_timestamp():\n    # 获取当前时间并格式化\n    return datetime.now().strftime('%y%m%d%H%M%S')\n\n# 使用示例\ntimestamp = get_timestamp()\nprint(timestamp)  # 输出格式如: 241031235959\noutputs[0] = timestamp ",
+        "./res/hello.py",
+        false
+      ],
+      "color": "#16727c",
+      "bgcolor": "#4F0074"
+    },
+    {
+      "id": 237,
+      "type": "TextInput_",
+      "pos": {
+        "0": -1355,
+        "1": 2431
+      },
+      "size": {
+        "0": 412.3826904296875,
+        "1": 161.30906677246094
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            330
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "TextInput_Design_Content",
+      "properties": {
+        "Node name for S&R": "TextInput_"
+      },
+      "widgets_values": [
+        "Your task is to conceptualize and elaborate on the design of a <target>.\n\nYour description should paint a vivid picture of the <target> for someone who cannot see it directly but wishes to understand its essence fully.\n\nNow please follow bellow principle to start design."
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 260,
+      "type": "Note",
+      "pos": {
+        "0": -2761,
+        "1": 2419
+      },
+      "size": {
+        "0": 393.2811279296875,
+        "1": 268.0566101074219
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note_model_selection",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "LLM-V:\nllava:7b\nllava-phi3:3.8b\ntinyllama:1.1b\nmoodream:1.8b\nminicpm-v:8b-2.6-q4_0\n\nLLM:\nqwen2:7b\nphi3:3.8b\ngemma:2b\nphi3:14b\nllama3:8b\nglm4:9b\nqwen2:7b-instruct\nllama3:instruct\ngemma2:9b-instruct-q4_0"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 289,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": 2291,
+        "1": 4109
+      },
+      "size": {
+        "0": 316.00567626953125,
+        "1": 142
+      },
+      "flags": {},
+      "order": 63,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 421,
+          "widget": {
+            "name": "text_a"
+          },
+          "label": "text_a",
+          "shape": 7
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 422,
+          "slot_index": 1,
+          "widget": {
+            "name": "text_b"
+          },
+          "label": "text_b",
+          "shape": 7
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": 423,
+          "widget": {
+            "name": "text_c"
+          },
+          "label": "text_c",
+          "shape": 7
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": 424,
+          "widget": {
+            "name": "text_d"
+          },
+          "label": "text_d",
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            428
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "generate json path\n",
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        "",
+        "false",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 291,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": 2296,
+        "1": 3925
+      },
+      "size": {
+        "0": 316.00567626953125,
+        "1": 142
+      },
+      "flags": {},
+      "order": 68,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 427,
+          "widget": {
+            "name": "text_a"
+          },
+          "label": "text_a",
+          "shape": 7
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 428,
+          "slot_index": 1,
+          "widget": {
+            "name": "text_b"
+          },
+          "label": "text_b",
+          "shape": 7
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_c"
+          },
+          "label": "text_c",
+          "shape": 7
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          },
+          "label": "text_d",
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            429
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "generate json path\n",
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        "",
+        "false",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 173,
+      "type": "Reroute",
+      "pos": {
+        "0": 1719,
+        "1": 3229
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 289,
+          "label": "",
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            283,
+            431
+          ],
+          "slot_index": 0,
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 205,
+      "type": "TextInput_",
+      "pos": {
+        "0": 1922,
+        "1": 3718
+      },
+      "size": {
+        "0": 235.79641723632812,
+        "1": 76.00018310546875
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            282
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextInput_",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "-TR"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 290,
+      "type": "TextInput_",
+      "pos": {
+        "0": 1921,
+        "1": 3881
+      },
+      "size": {
+        "0": 220.30191040039062,
+        "1": 76
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            424
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextInput_",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        ".json"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 295,
+      "type": "TextInput_",
+      "pos": {
+        "0": 1920,
+        "1": 3570
+      },
+      "size": {
+        "0": 235.79641723632812,
+        "1": 76.00018310546875
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            432
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextInput_",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "-ref"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 204,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": 2314,
+        "1": 3681
+      },
+      "size": {
+        "0": 316.00567626953125,
+        "1": 142
+      },
+      "flags": {},
+      "order": 65,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 283,
+          "widget": {
+            "name": "text_a"
+          },
+          "label": "text_a"
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 282,
+          "slot_index": 1,
+          "widget": {
+            "name": "text_b"
+          },
+          "label": "text_b"
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_c"
+          },
+          "label": "text_c"
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          },
+          "label": "text_d"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            370
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "generate transparent file name\n",
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        "",
+        "false",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 281,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": 2311,
+        "1": 3276
+      },
+      "size": {
+        "0": 316.00567626953125,
+        "1": 142
+      },
+      "flags": {},
+      "order": 62,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 392,
+          "widget": {
+            "name": "text_a"
+          },
+          "label": "text_a",
+          "shape": 7
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 397,
+          "slot_index": 1,
+          "widget": {
+            "name": "text_b"
+          },
+          "label": "text_b",
+          "shape": 7
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": 396,
+          "widget": {
+            "name": "text_c"
+          },
+          "label": "text_c",
+          "shape": 7
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": 394,
+          "widget": {
+            "name": "text_d"
+          },
+          "label": "text_d",
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            387
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "Generate_3D_path",
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        "",
+        "false",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 207,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": 1478,
+        "1": 3435
+      },
+      "size": {
+        "0": 316.00567626953125,
+        "1": 142
+      },
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 286,
+          "widget": {
+            "name": "text_a"
+          },
+          "label": "text_a"
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 378,
+          "slot_index": 1,
+          "widget": {
+            "name": "text_b"
+          },
+          "label": "text_b"
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_c"
+          },
+          "label": "text_c"
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          },
+          "label": "text_d"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            289,
+            390,
+            396,
+            423
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "generate file names\n",
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        "_",
+        "true",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 280,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": 1483,
+        "1": 3641
+      },
+      "size": {
+        "0": 316.00567626953125,
+        "1": 142
+      },
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 381,
+          "widget": {
+            "name": "text_a"
+          },
+          "label": "text_a",
+          "shape": 7
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 382,
+          "slot_index": 1,
+          "widget": {
+            "name": "text_b"
+          },
+          "label": "text_b",
+          "shape": 7
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_c"
+          },
+          "label": "text_c",
+          "shape": 7
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          },
+          "label": "text_d",
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            388,
+            391,
+            392,
+            421,
+            434
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "generate day folder\n",
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        "",
+        "false",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 250,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 2290,
+        "1": 2359
+      },
+      "size": {
+        "0": 729.5344848632812,
+        "1": 652.1849365234375
+      },
+      "flags": {},
+      "order": 76,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 351,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 278,
+      "type": "easy cleanGpuUsed",
+      "pos": {
+        "0": 3779,
+        "1": 3400
+      },
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 86,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 379
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "easy cleanGpuUsed",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 171,
+      "type": "Reroute",
+      "pos": {
+        "0": 2070,
+        "1": 2400
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 72,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 206,
+          "label": ""
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            258,
+            351,
+            389
+          ],
+          "slot_index": 0,
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 302,
+      "type": "Reroute",
+      "pos": {
+        "0": 3608,
+        "1": 2432
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 78,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 442
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            440,
+            441
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 187,
+      "type": "[Comfy3D] TripoSR",
+      "pos": {
+        "0": 3215,
+        "1": 2683
+      },
+      "size": {
+        "0": 267.0216979980469,
+        "1": 122
+      },
+      "flags": {},
+      "order": 81,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "tsr_model",
+          "type": "TSR_MODEL",
+          "link": 253,
+          "label": "tsr_model"
+        },
+        {
+          "name": "reference_image",
+          "type": "IMAGE",
+          "link": 441,
+          "label": "reference_image"
+        },
+        {
+          "name": "reference_mask",
+          "type": "MASK",
+          "link": 443,
+          "label": "reference_mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mesh",
+          "type": "MESH",
+          "links": [
+            256
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MESH"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "[Comfy3D] TripoSR",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        240,
+        25
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 190,
+      "type": "RembgNode_Mix",
+      "pos": {
+        "0": 3160,
+        "1": 2359
+      },
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 75,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 258,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "masks",
+          "type": "MASK",
+          "links": [
+            443
+          ],
+          "slot_index": 0,
+          "shape": 6,
+          "label": "masks"
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            442
+          ],
+          "slot_index": 1,
+          "shape": 6,
+          "label": "images"
+        },
+        {
+          "name": "RGBAs",
+          "type": "RGBA",
+          "links": null,
+          "shape": 6,
+          "label": "RGBAs"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RembgNode_Mix",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "u2net"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 63,
+      "type": "LoadImage",
+      "pos": {
+        "0": -2779,
+        "1": 2799
+      },
+      "size": {
+        "0": 416.1426086425781,
+        "1": 342.70941162109375
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            398,
+            430
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "MASK"
+        }
+      ],
+      "title": "Load Image_ref-image",
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "empyt.jpg",
+        "image"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 102,
+      "type": "VAEDecode",
+      "pos": {
+        "0": -439.76324462890625,
+        "1": 5217.5927734375
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 69,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 123,
+          "label": "samples"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 124,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            206
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 294,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": 2308,
+        "1": 3490
+      },
+      "size": {
+        "0": 316.00567626953125,
+        "1": 142
+      },
+      "flags": {},
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 431,
+          "widget": {
+            "name": "text_a"
+          },
+          "label": "text_a",
+          "shape": 7
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 432,
+          "slot_index": 1,
+          "widget": {
+            "name": "text_b"
+          },
+          "label": "text_b",
+          "shape": 7
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_c"
+          },
+          "label": "text_c",
+          "shape": 7
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          },
+          "label": "text_d",
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            433
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "generate transparent file name\n",
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        "",
+        "false",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 268,
+      "type": "[Comfy3D] Preview 3DMesh",
+      "pos": {
+        "0": 4254,
+        "1": 3212
+      },
+      "size": [
+        600,
+        500
+      ],
+      "flags": {},
+      "order": 85,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mesh_file_path",
+          "type": "STRING",
+          "link": 368,
+          "widget": {
+            "name": "mesh_file_path"
+          }
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "[Comfy3D] Preview 3DMesh",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        null
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 287,
+      "type": "FL_CodeNode",
+      "pos": {
+        "0": 2773,
+        "1": 3760
+      },
+      "size": {
+        "0": 335.74957275390625,
+        "1": 434.76513671875
+      },
+      "flags": {},
+      "order": 71,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "0_string",
+          "type": "STRING",
+          "link": 414
+        },
+        {
+          "name": "1_",
+          "type": "STRING",
+          "link": 471
+        },
+        {
+          "name": "2_result_text",
+          "type": "STRING",
+          "link": 416
+        },
+        {
+          "name": "3_",
+          "type": "STRING",
+          "link": 476
+        },
+        {
+          "name": "4_string",
+          "type": "STRING",
+          "link": 418
+        },
+        {
+          "name": "5_string",
+          "type": "STRING",
+          "link": 419
+        },
+        {
+          "name": "6_string",
+          "type": "STRING",
+          "link": 429
+        },
+        {
+          "name": "input",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_0",
+          "type": "*",
+          "links": [
+            451
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "output_1",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "output_2",
+          "type": "*",
+          "links": null
+        },
+        {
+          "name": "output_3",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FL_CodeNode"
+      },
+      "widgets_values": [
+        "import json\nimport os\nfrom collections import OrderedDict\n\ndef save_inputs_to_json(input1, input2, input3, output1, output2, output3, file_path):\n    # 使用OrderedDict来控制JSON字段的顺序\n    data = OrderedDict([\n        (\"prompt1\", input1),\n        (\"output1\", output1),\n        (\"prompt2\", input2),\n        (\"output2\", output2),\n        (\"prompt3\", input3),\n        (\"output3\", output3)\n    ])\n    \n    try:\n        # 确保目标文件夹存在\n        os.makedirs(os.path.dirname(file_path), exist_ok=True)\n        \n        # 写入JSON文件\n        with open(file_path, 'w', encoding='utf-8') as f:\n            json.dump(data, f, indent=4, ensure_ascii=False)\n        print(f\"数据已成功保存到: {file_path}\")\n        \n    except Exception as e:\n        print(f\"保存文件时发生错误: {str(e)}\")\n\n\n    \n# 指定保存路径\nsave_path = inputs[6]\n# 保存数据\nsave_inputs_to_json(\n    inputs[0], inputs[2], inputs[4],\n    inputs[1], inputs[3], inputs[5],\n    save_path\n)\n \noutputs[0] = save_path\n",
+        "./res/hello.py",
+        false
+      ],
+      "color": "#16727c",
+      "bgcolor": "#4F0074"
+    },
+    {
+      "id": 305,
+      "type": "ShowTextForGPT",
+      "pos": {
+        "0": 3133,
+        "1": 4367
+      },
+      "size": {
+        "0": 351.5427551269531,
+        "1": 96
+      },
+      "flags": {},
+      "order": 73,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 452,
+          "widget": {
+            "name": "text"
+          }
+        },
+        {
+          "name": "output_dir",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "output_dir"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowTextForGPT",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\Coralium_Chair_241106170709-ref.jpg']"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 288,
+      "type": "ShowTextForGPT",
+      "pos": {
+        "0": 2771,
+        "1": 4242
+      },
+      "size": {
+        "0": 312.3394775390625,
+        "1": 179.80226135253906
+      },
+      "flags": {},
+      "order": 74,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 451,
+          "widget": {
+            "name": "text"
+          }
+        },
+        {
+          "name": "output_dir",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "output_dir"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowTextForGPT",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        ".\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\Coralium_Chair_241106170709.json"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 266,
+      "type": "[Comfy3D] Save 3D Mesh",
+      "pos": {
+        "0": 3379,
+        "1": 3345
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 84,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mesh",
+          "type": "MESH",
+          "link": 364
+        },
+        {
+          "name": "save_path",
+          "type": "STRING",
+          "link": 374,
+          "widget": {
+            "name": "save_path"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "save_path",
+          "type": "STRING",
+          "links": [
+            368,
+            379,
+            455
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "[Comfy3D] Save 3D Mesh",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "Mesh_%Y-%m-%d-%M-%S-%f.obj"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 269,
+      "type": "ShowTextForGPT",
+      "pos": {
+        "0": 3837,
+        "1": 3501
+      },
+      "size": {
+        "0": 351.5427551269531,
+        "1": 96
+      },
+      "flags": {},
+      "order": 87,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 455,
+          "widget": {
+            "name": "text"
+          }
+        },
+        {
+          "name": "output_dir",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "output_dir"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowTextForGPT",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        "D:\\01_DL\\ComfyUI_windows_portable\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\Coralium_Chair_241106170709.obj"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 235,
+      "type": "Reroute",
+      "pos": {
+        "0": -1828,
+        "1": 3229
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 326,
+          "label": "",
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "INT",
+          "links": [
+            332,
+            333,
+            373
+          ],
+          "slot_index": 0,
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 188,
+      "type": "[Comfy3D] Load TripoSR Model",
+      "pos": {
+        "0": 3193,
+        "1": 2515
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "tsr_model",
+          "type": "TSR_MODEL",
+          "links": [
+            253
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "tsr_model"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "[Comfy3D] Load TripoSR Model",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "model.ckpt",
+        8192
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 293,
+      "type": "Image Save",
+      "pos": {
+        "0": 3182,
+        "1": 3675
+      },
+      "size": {
+        "0": 315,
+        "1": 602
+      },
+      "flags": {},
+      "order": 70,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 430
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": 433,
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "name": "output_path",
+          "type": "STRING",
+          "link": 434,
+          "widget": {
+            "name": "output_path"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null,
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "files",
+          "type": "STRING",
+          "links": [
+            452
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "title": "Bio_ref-Image Save",
+      "properties": {
+        "Node name for S&R": "Image Save",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "[time(%Y-%m-%d)]",
+        "ComfyUI",
+        "_",
+        4,
+        "false",
+        "jpg",
+        300,
+        85,
+        "true",
+        "false",
+        "prefix_as_filename",
+        "false",
+        "true",
+        "true",
+        "true"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 303,
+      "type": "ShowTextForGPT",
+      "pos": {
+        "0": 3569,
+        "1": 4377
+      },
+      "size": {
+        "0": 351.5427551269531,
+        "1": 96
+      },
+      "flags": {},
+      "order": 79,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 453,
+          "widget": {
+            "name": "text"
+          }
+        },
+        {
+          "name": "output_dir",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "output_dir"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowTextForGPT",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\Coralium_Chair_241106170709.jpg']"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 306,
+      "type": "ShowTextForGPT",
+      "pos": {
+        "0": 4128,
+        "1": 4356
+      },
+      "size": {
+        "0": 351.5427551269531,
+        "1": 96
+      },
+      "flags": {},
+      "order": 82,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 454,
+          "widget": {
+            "name": "text"
+          }
+        },
+        {
+          "name": "output_dir",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "output_dir"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowTextForGPT",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\Coralium_Chair_241106170709-TR.png']"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 270,
+      "type": "Image Save",
+      "pos": {
+        "0": 3874,
+        "1": 3693
+      },
+      "size": {
+        "0": 315,
+        "1": 602
+      },
+      "flags": {},
+      "order": 80,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 440
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": 370,
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "name": "output_path",
+          "type": "STRING",
+          "link": 388,
+          "widget": {
+            "name": "output_path"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "files",
+          "type": "STRING",
+          "links": [
+            454
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "title": "RM_backgroud-Image Save",
+      "properties": {
+        "Node name for S&R": "Image Save",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "[time(%Y-%m-%d)]",
+        "ComfyUI",
+        "_",
+        4,
+        "false",
+        "png",
+        300,
+        50,
+        "true",
+        "false",
+        "prefix_as_filename",
+        "false",
+        "true",
+        "true",
+        "true"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 282,
+      "type": "Image Save",
+      "pos": {
+        "0": 3524,
+        "1": 3683
+      },
+      "size": {
+        "0": 315,
+        "1": 602
+      },
+      "flags": {},
+      "order": 77,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 389
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "link": 390,
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "name": "output_path",
+          "type": "STRING",
+          "link": 391,
+          "widget": {
+            "name": "output_path"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null,
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "files",
+          "type": "STRING",
+          "links": [
+            453
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "title": "2D_Gen-Image Save",
+      "properties": {
+        "Node name for S&R": "Image Save",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "[time(%Y-%m-%d)]",
+        "ComfyUI",
+        "_",
+        4,
+        "false",
+        "jpg",
+        300,
+        85,
+        "true",
+        "false",
+        "prefix_as_filename",
+        "false",
+        "true",
+        "true",
+        "true"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 172,
+      "type": "TextInput_",
+      "pos": {
+        "0": -1678,
+        "1": 2958
+      },
+      "size": {
+        "0": 329.3548583984375,
+        "1": 76.00000762939453
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            208
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "TextInput_design object",
+      "properties": {
+        "Node name for S&R": "TextInput_"
+      },
+      "widgets_values": [
+        "chair"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 206,
+      "type": "Seed",
+      "pos": {
+        "0": -2227,
+        "1": 2854
+      },
+      "size": {
+        "0": 315,
+        "1": 142
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "SEED",
+          "links": null,
+          "slot_index": 0,
+          "shape": 3,
+          "label": "seed"
+        },
+        {
+          "name": "number",
+          "type": "NUMBER",
+          "links": null,
+          "slot_index": 1,
+          "shape": 3,
+          "label": "number"
+        },
+        {
+          "name": "float",
+          "type": "FLOAT",
+          "links": null,
+          "slot_index": 2,
+          "shape": 3,
+          "label": "float"
+        },
+        {
+          "name": "int",
+          "type": "INT",
+          "links": [
+            285,
+            326
+          ],
+          "slot_index": 3,
+          "shape": 3,
+          "label": "int"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Seed",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        292920935574733,
+        "randomize"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 86,
+      "type": "Text Find and Replace",
+      "pos": {
+        "0": -1327,
+        "1": 2739
+      },
+      "size": {
+        "0": 329.6191711425781,
+        "1": 142
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 330,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        },
+        {
+          "name": "replace",
+          "type": "STRING",
+          "link": 208,
+          "slot_index": 1,
+          "widget": {
+            "name": "replace"
+          },
+          "label": "replace"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result_text",
+          "type": "STRING",
+          "links": [
+            416,
+            461
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "result_text"
+        },
+        {
+          "name": "replacement_count_number",
+          "type": "NUMBER",
+          "links": null,
+          "shape": 3,
+          "label": "replacement_count_number"
+        },
+        {
+          "name": "replacement_count_float",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3,
+          "label": "replacement_count_float"
+        },
+        {
+          "name": "replacement_count_int",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "replacement_count_int"
+        }
+      ],
+      "title": "Text Find and Replace: Building type",
+      "properties": {
+        "Node name for S&R": "Text Find and Replace",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "<target>",
+        "biological pavilion"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 311,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": -1310,
+        "1": 2966
+      },
+      "size": {
+        "0": 315,
+        "1": 178
+      },
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 461,
+          "widget": {
+            "name": "text_a"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 462,
+          "widget": {
+            "name": "text_b"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_c"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            463
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Concatenate",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "/n",
+        "true",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 193,
+      "type": "TextInput_",
+      "pos": {
+        "0": -412,
+        "1": 3517
+      },
+      "size": {
+        "0": 396.1642150878906,
+        "1": 208.1026611328125
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            360
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "WIP_short_name_generator",
+      "properties": {
+        "Node name for S&R": "TextInput_FileName-convert"
+      },
+      "widgets_values": [
+        "Generate a short filename for saving an artwork, using the provided description. The file name must be plain text (no markdown format), less then 20 letters, without extension and special symbols, except replacing spaces with underscores.\n\nPlease reply with the required filename only, without any fillers, greetings, or connecting words.\n\n"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 232,
+      "type": "OllamaTextDescriber",
+      "pos": {
+        "0": 325,
+        "1": 2357
+      },
+      "size": {
+        "0": 400,
+        "1": 318.0000305175781
+      },
+      "flags": {},
+      "order": 54,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "system_context",
+          "type": "STRING",
+          "link": 344,
+          "widget": {
+            "name": "system_context"
+          },
+          "label": "system_context"
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 348,
+          "widget": {
+            "name": "prompt"
+          },
+          "label": "prompt"
+        },
+        {
+          "name": "seed_number",
+          "type": "INT",
+          "link": 333,
+          "widget": {
+            "name": "seed_number"
+          },
+          "label": "seed_number"
+        },
+        {
+          "name": "custom_model",
+          "type": "STRING",
+          "link": 354,
+          "widget": {
+            "name": "custom_model"
+          },
+          "label": "custom_model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "STRING",
+          "links": [
+            339
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "result"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OllamaTextDescriber",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "qwen2:7b (Q4_0, 4.4GB)",
+        "",
+        "http://localhost:11434",
+        300,
+        0.7000000000000001,
+        40,
+        0.9,
+        1.1,
+        "Your job is to generate prompts to be used in stable diffusion/midjourney,\nyou will receive a text and you need to extract the most important information/characteristics from this text and transform this into tags in booru format.\n                    ",
+        150,
+        -1,
+        "Your job is to generate prompts to be used in stable diffusion/midjourney,\nyou will receive a text and you need to extract the most important information/characteristics from this text and transform this into tags in booru format.\n                    ",
+        "Extract the booru tags from this text in detail but do not extract text information, such as the artist, return a line with the tags in lowercase letters and separated by commas in the following format: <TAGS>tag1, tag2, tag3</TAGS>.\n\nExample:\nInput: \"A beautiful scenery with mountains and a light blue river.\"\nOutput: <TAGS>scenery, mountains, (light blue river:1.2)</TAGS>\n\nInput: \"A portrait of a woman with a red dress and a hat.\"\nOutput: <TAGS>portrait, woman, (red dress:1.2), hat</TAGS>\n\nNow, extract the tags from the following text: "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 247,
+      "type": "Reroute",
+      "pos": {
+        "0": 191,
+        "1": 2750
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 343,
+          "label": "",
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            344
+          ],
+          "slot_index": 0,
+          "label": ""
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 246,
+      "type": "TextInput_",
+      "pos": {
+        "0": -498,
+        "1": 2770
+      },
+      "size": {
+        "0": 582.039306640625,
+        "1": 377.80242919921875
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            343,
+            418
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "TextInput_SD-prompt-convert",
+      "properties": {
+        "Node name for S&R": "TextInput_"
+      },
+      "widgets_values": [
+        "Now you are a prompt writer of stable diffusion. Please convert the given text into the format of stable diffusion prompt following bellow guideline in English:\n\n- Reply in plain text format. without extension and special symbols, except replacing spaces with underscores.\n- Prompt should always be written in English, regardless of the input language. Please provide the prompts in English.\n- Each prompt should consist of a description of the scene followed by modifiers divided by commas.\n- When generating descriptions, focus on portraying the visual elements rather than delving into abstract psychological and emotional aspects. Provide clear and concise details that vividly depict the scene and its composition, capturing the tangible elements that make up the setting.\n- The modifiers should alter the mood, style, lighting, and other aspects of the scene.\n- Multiple modifiers can be used to provide more specific details.\n\nHere is the reply template you should follow:\n\nAn image of [adjective] [subject] [doing action], [creative lighting style], detailed, realistic, trending on artstation, in style of [famous artist 1], [famous artist 2], [famous artist 3].\n\nThe [subject] is characterized by [additional descriptive elements, such as color, texture, material, and any other notable features]. Surrounding elements in the scene provide context and enhance the overall narrative, including [additional surrounding elements]. This image should reflect a style that is trending on ArtStation, and be influenced by the artistic styles of [famous artist 1], [famous artist 2], and [famous artist 3]. The overall composition should evoke [specific emotions or themes], ensuring a cohesive and captivating visual experience.\n\nThe reply limitation is 150 tokens. Your reply must be in English.\n\n\n\n\n"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 251,
+      "type": "TextInput_",
+      "pos": {
+        "0": -2224,
+        "1": 2709
+      },
+      "size": {
+        "0": 329.3548583984375,
+        "1": 76.0000228881836
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            353,
+            354,
+            362
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "TextInput_custom_model",
+      "properties": {
+        "Node name for S&R": "TextInput_"
+      },
+      "widgets_values": [
+        "gemma2:9b-instruct-q4_0"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 310,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": -2228,
+        "1": 3040
+      },
+      "size": {
+        "0": 315,
+        "1": 178
+      },
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 458,
+          "widget": {
+            "name": "text_a"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 459,
+          "widget": {
+            "name": "text_b"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_c"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            460
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text Concatenate",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "/n ",
+        "true",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 259,
+      "type": "OllamaImageDescriber",
+      "pos": {
+        "0": -1809,
+        "1": 2482
+      },
+      "size": {
+        "0": 400,
+        "1": 390
+      },
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 398
+        },
+        {
+          "name": "system_context",
+          "type": "STRING",
+          "link": 460,
+          "widget": {
+            "name": "system_context"
+          }
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 372,
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "name": "seed_number",
+          "type": "INT",
+          "link": 373,
+          "widget": {
+            "name": "seed_number"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "STRING",
+          "links": [
+            466,
+            468,
+            470
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OllamaImageDescriber",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "llava-llama3:8b (Q4_K_M, 5.5GB)",
+        "minicpm-v:8b-2.6-q4_0",
+        "http://localhost:11434",
+        300,
+        0.7000000000000001,
+        40,
+        0.9,
+        1.1,
+        42,
+        4000,
+        0,
+        "You are an assistant who describes the content and composition of images. \nDescribe only what you see in the image, not what you think the image is about.Be factual and literal. \nDo not use metaphors or similes. \nBe concise.",
+        "Return a list of danbooru tags for this image, formatted as lowercase, separated by commas."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 202,
+      "type": "TextInput_",
+      "pos": {
+        "0": 1130,
+        "1": 3930
+      },
+      "size": {
+        "0": 235.79641723632812,
+        "1": 76.00018310546875
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            381
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextInput_",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "AI-Artist\\3D-Bionic-Product-Designer\\"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 316,
+      "type": "Reroute",
+      "pos": {
+        "0": 2639,
+        "1": 3787
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 470
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            471
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 248,
+      "type": "TextTransformer",
+      "pos": {
+        "0": -385,
+        "1": 3217
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 473,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            348
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "text"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextTransformer",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "Now, here is the text for converting into stable diffusion prompt:",
+        "",
+        "normal",
+        "*",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 318,
+      "type": "Reroute",
+      "pos": {
+        "0": 2636,
+        "1": 3814
+      },
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 475
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": [
+            476
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 244,
+      "type": "TextTransformer",
+      "pos": {
+        "0": 314,
+        "1": 3752
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 55,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 363,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            342
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "text"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextTransformer",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "normal",
+        "*",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 264,
+      "type": "OllamaTextDescriber",
+      "pos": {
+        "0": 316,
+        "1": 3301
+      },
+      "size": {
+        "0": 400,
+        "1": 390
+      },
+      "flags": {},
+      "order": 52,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "system_context",
+          "type": "STRING",
+          "link": 360,
+          "widget": {
+            "name": "system_context"
+          }
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 474,
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "name": "custom_model",
+          "type": "STRING",
+          "link": 362,
+          "widget": {
+            "name": "custom_model"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "STRING",
+          "links": [
+            363
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OllamaTextDescriber",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "qwen2:0.5b (Q4_0, 352MB)",
+        "",
+        "http://localhost:11434",
+        300,
+        0.5,
+        40,
+        0.9,
+        1.1,
+        42,
+        50,
+        -1,
+        "Your job is to generate prompts to be used in stable diffusion/midjourney,\nyou will receive a text and you need to extract the most important information/characteristics from this text and transform this into tags in booru format.\n                    ",
+        "Extract the booru tags from this text in detail but do not extract text information, such as the artist, return a line with the tags in lowercase letters and separated by commas in the following format: <TAGS>tag1, tag2, tag3</TAGS>.\n\nExample:\nInput: \"A beautiful scenery with mountains and a light blue river.\"\nOutput: <TAGS>scenery, mountains, (light blue river:1.2)</TAGS>\n\nInput: \"A portrait of a woman with a red dress and a hat.\"\nOutput: <TAGS>portrait, woman, (red dress:1.2), hat</TAGS>\n\nNow, extract the tags from the following text: "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 286,
+      "type": "ShowTextForGPT",
+      "pos": {
+        "0": 322,
+        "1": 3041
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 58,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 409,
+          "widget": {
+            "name": "text"
+          }
+        },
+        {
+          "name": "output_dir",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "output_dir"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            411,
+            419
+          ],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowTextForGPT"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "An image of a bioengineered, futuristic, coral reef inspired chair, intricate, detailed, realistic, trending on artstation, in style of Antoni Gaudí,  Frank Lloyd Wright, Studio Ghibli.\n\nThe Coralium chair is characterized by interwoven hexagonal panels made of a bio-composite material, vibrant blues fading into deep greens with hints of orange and purple. The cushions are sculpted from recycled materials, mimicking the soft texture of coral polyps. Surrounding elements include a base formed from three gently curving hexagonal panels and a single coral-like glass element dangling from the back. This image should reflect a style that is trending on ArtStation, and be influenced by the artistic styles of Antoni Gaudí, Frank Lloyd Wright, and Studio Ghibli. "
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 243,
+      "type": "TextTransformer",
+      "pos": {
+        "0": 332,
+        "1": 2764
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 56,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 339,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            409
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "text"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextTransformer",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "normal",
+        "*",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 317,
+      "type": "easy showAnything",
+      "pos": {
+        "0": -947,
+        "1": 3246
+      },
+      "size": [
+        405.1982805157959,
+        533.6469900607694
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 472,
+          "shape": 7
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "easy showAnything",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "## The Coralium Chair: \n\nImagine a chair that doesn't just sit, but seems to *grow* from the earth, its form echoing the intricate beauty of coral reefs. This is the Coralium chair.  \n\n**Structure:** Its frame isn't made of solid metal or wood, but of interwoven hexagonal panels, each delicately crafted from a bio-engineered composite material inspired by coral skeletons. These panels are lightweight yet incredibly strong, allowing for both elegance and resilience. The panels subtly curve inward, mirroring the natural growth patterns of coral, creating a sense of organic flow and inviting you to sink into its embrace.\n\n**Seating:** Cushions sculpted from recycled materials mimic the soft texture of coral polyps, providing unparalleled comfort and a tactile connection to nature. They are strategically placed within the hexagonal framework, maximizing both support and breathability. \n\n**Color & Texture:** The chair's surface is not uniform. It subtly shifts in color and texture, echoing the diverse hues and patterns found in coral reefs.  Imagine vibrant blues fading into deep greens, punctuated by hints of orange and purple, reminiscent of a sunlit underwater world. This interplay of colors creates a captivating visual experience that draws your eye and invites exploration.\n\n**Details:** \n\n* **Base:** The chair rests upon a base formed from three gently curving hexagonal panels, mimicking the foundation of a coral head.  This provides stability while maintaining an airy and elegant silhouette.\n* **Accent:** A single coral-like element, crafted from sustainably sourced glass, dangles subtly from the back of the chair, adding a touch of whimsy and serving as a reminder of the natural inspiration behind its design.\n\n**Experience:** Sitting in the Coralium chair is like being transported to an underwater oasis. The combination of comfortable cushioning, organic curves, and vibrant color creates a truly immersive sensory experience that fosters relaxation and contemplation. \n\n\nThe Coralium chair is not just furniture; it's a testament to the power of biomimicry, showcasing how nature's ingenuity can inspire innovative and sustainable design solutions."
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 229,
+      "type": "OllamaTextDescriber",
+      "pos": {
+        "0": -952,
+        "1": 2879
+      },
+      "size": {
+        "0": 400,
+        "1": 318.0000305175781
+      },
+      "flags": {},
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "system_context",
+          "type": "STRING",
+          "link": 463,
+          "widget": {
+            "name": "system_context"
+          },
+          "label": "system_context"
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "link": 466,
+          "widget": {
+            "name": "prompt"
+          },
+          "label": "prompt"
+        },
+        {
+          "name": "seed_number",
+          "type": "INT",
+          "link": 332,
+          "widget": {
+            "name": "seed_number"
+          },
+          "label": "seed_number"
+        },
+        {
+          "name": "custom_model",
+          "type": "STRING",
+          "link": 353,
+          "widget": {
+            "name": "custom_model"
+          },
+          "label": "custom_model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "STRING",
+          "links": [
+            472,
+            473,
+            474,
+            475
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "result"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OllamaTextDescriber",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "qwen2:7b (Q4_0, 4.4GB)",
+        "",
+        "http://localhost:11434",
+        300,
+        0.7000000000000001,
+        40,
+        0.9,
+        1.1,
+        "Your job is to generate prompts to be used in stable diffusion/midjourney,\nyou will receive a text and you need to extract the most important information/characteristics from this text and transform this into tags in booru format.\n                    ",
+        4000,
+        -1,
+        "Your job is to generate prompts to be used in stable diffusion/midjourney,\nyou will receive a text and you need to extract the most important information/characteristics from this text and transform this into tags in booru format.\n                    ",
+        "Extract the booru tags from this text in detail but do not extract text information, such as the artist, return a line with the tags in lowercase letters and separated by commas in the following format: <TAGS>tag1, tag2, tag3</TAGS>.\n\nExample:\nInput: \"A beautiful scenery with mountains and a light blue river.\"\nOutput: <TAGS>scenery, mountains, (light blue river:1.2)</TAGS>\n\nInput: \"A portrait of a woman with a red dress and a hat.\"\nOutput: <TAGS>portrait, woman, (red dress:1.2), hat</TAGS>\n\nNow, extract the tags from the following text: "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 62,
+      "type": "TextInput_",
+      "pos": {
+        "0": -2795,
+        "1": 3206
+      },
+      "size": {
+        "0": 418.22509765625,
+        "1": 133.20846557617188
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            310,
+            458
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "TextInput_Agent-role",
+      "properties": {
+        "Node name for S&R": "TextInput_"
+      },
+      "widgets_values": [
+        "You are a visionary and adept designer and artist, passionate about pioneering new design typologies and methodologies. Your current focus is on integrating biological intelligence into the traditional design workflow, leveraging nature's ingenuity to revolutionize product practice.\n\n"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 70,
+      "type": "TextInput_",
+      "pos": {
+        "0": -2800,
+        "1": 3705
+      },
+      "size": {
+        "0": 425.06512451171875,
+        "1": 455.8484802246094
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            331,
+            412
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "TextInput_Task",
+      "properties": {
+        "Node name for S&R": "TextInput_"
+      },
+      "widgets_values": [
+        "For this task, I will provide you with the name of a specific creature and a reference image. Your objective is to identify a potential biological feature of this creature—this could be its geometric characteristics, collective intelligence behaviors, material efficiency, or system mechanisms—and elaborate on how this feature could be innovatively applied to enhance traditional architectural design workflows.\n\nPlease include in your response:\n\n1. **Identification of the Biological Feature**: Briefly describe the chosen feature (e.g., the hexagonal honeycomb structures created by bees for efficient space utilization).\n\n2. **Hypothesis Development**: Create a detailed hypothesis explaining why this particular biological feature is beneficial for architectural design. Consider aspects such as sustainability, structural integrity, efficiency, or adaptability.\n\n3. **Application Methodology**: Describe how this biological feature can be systematically integrated into existing design processes. This should include both conceptual and technical considerations (e.g., using biomimicry to develop new building materials or spatial configurations).\n\n4. **Potential Impact**: Speculate on the potential impact of implementing this bio-inspired approach on traditional design practices, including possible challenges and advantages.\n\nYour insights will contribute to developing a groundbreaking approach that blends art work with the wisdom of nature's designs, potentially setting new standards in the field."
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 65,
+      "type": "TextInput_",
+      "pos": {
+        "0": -2804,
+        "1": 4207
+      },
+      "size": {
+        "0": 454.2206115722656,
+        "1": 76
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            84,
+            313
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "TextInput_target-creature",
+      "properties": {
+        "Node name for S&R": "TextInput_"
+      },
+      "widgets_values": [
+        "Now, your reference creature is \"coral\"."
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 76,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": -2194,
+        "1": 3804
+      },
+      "size": {
+        "0": 316.00567626953125,
+        "1": 142
+      },
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 310,
+          "widget": {
+            "name": "text_a"
+          },
+          "label": "text_a"
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 412,
+          "widget": {
+            "name": "text_b"
+          },
+          "label": "text_b"
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": 84,
+          "widget": {
+            "name": "text_c"
+          },
+          "label": "text_c"
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          },
+          "label": "text_d"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            414
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "Text_1st input: role, task, target",
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        ", ",
+        "false",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 315,
+      "type": "easy showAnything",
+      "pos": {
+        "0": -1699,
+        "1": 3224
+      },
+      "size": [
+        372.14028297154096,
+        495.56943241390854
+      ],
+      "flags": {},
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "link": 468,
+          "shape": 7
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "easy showAnything",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "### Identification of the Biological Feature: Hexagonal Structures in Coral Formation\nCoral is known for its remarkable ability to create intricate and highly efficient structures. One prominent feature observed in coral formation is their hexagonal patterns, which are a result of natural self-organization processes. These hexagonal arrangements provide several benefits such as stability, strength, and space efficiency.\n\n### Hypothesis Development:\nThe hypothesis developed here suggests that the use of hexagonal geometric shapes inspired by coral formations can significantly improve architectural design workflows in terms of sustainability, structural integrity, and material efficiency.\n\n1. **Sustainability**: By incorporating bio-inspired geometries into building materials, architects could potentially reduce their environmental impact. Hexagonal structures are known for using space efficiently without waste, which is an eco-friendly practice.\n2. **Structural Integrity**: The hexagonal pattern observed in coral provides a highly stable and strong framework due to its inherent geometry. Applying this principle can lead to the development of new construction techniques that enhance building durability and resistance against environmental forces like wind or earthquakes.\n\n### Application Methodology:\n1. **Material Development**: Research into biomimicry could result in innovative materials mimicking hexagonal structures, which would be lighter yet stronger than conventional alternatives.\n2. **Spatial Configuration**: Architects can use the principles of self-organization seen in coral to create efficient spatial layouts within buildings. This might involve designing spaces that naturally arrange themselves based on their functional requirements and environmental conditions.\n\n### Potential Impact:\nImplementing this bio-inspired approach could revolutionize traditional architectural design practices by fostering sustainability, increasing material efficiency, improving structural integrity, and promoting adaptability of designs to various environments./nThe use of hexagonal structures inspired by coral can improve sustainable building materials, enhance structural stability through self-organization principles seen in nature."
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 308,
+      "type": "Text Find and Replace",
+      "pos": {
+        "0": -2227,
+        "1": 3338
+      },
+      "size": {
+        "0": 329.6191711425781,
+        "1": 142
+      },
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 456,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        },
+        {
+          "name": "replace",
+          "type": "STRING",
+          "link": 457,
+          "slot_index": 1,
+          "widget": {
+            "name": "replace"
+          },
+          "label": "replace"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result_text",
+          "type": "STRING",
+          "links": [
+            459,
+            462,
+            477
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "result_text"
+        },
+        {
+          "name": "replacement_count_number",
+          "type": "NUMBER",
+          "links": null,
+          "shape": 3,
+          "label": "replacement_count_number"
+        },
+        {
+          "name": "replacement_count_float",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3,
+          "label": "replacement_count_float"
+        },
+        {
+          "name": "replacement_count_int",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "label": "replacement_count_int"
+        }
+      ],
+      "title": "Text Find and Replace: Building type",
+      "properties": {
+        "Node name for S&R": "Text Find and Replace",
+        "ttNbgOverride": {
+          "color": "#432",
+          "bgcolor": "#653",
+          "groupcolor": "#b58b2a"
+        }
+      },
+      "widgets_values": [
+        "",
+        "<language>",
+        "biological pavilion"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 230,
+      "type": "Text Concatenate",
+      "pos": {
+        "0": -2213,
+        "1": 3573
+      },
+      "size": {
+        "0": 316.00567626953125,
+        "1": 142
+      },
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_a",
+          "type": "STRING",
+          "link": 331,
+          "widget": {
+            "name": "text_a"
+          },
+          "label": "text_a"
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 313,
+          "widget": {
+            "name": "text_b"
+          },
+          "label": "text_b"
+        },
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": 477,
+          "widget": {
+            "name": "text_c"
+          },
+          "label": "text_c"
+        },
+        {
+          "name": "text_d",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "text_d"
+          },
+          "label": "text_d"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            372
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "Text_1st input: task, target",
+      "properties": {
+        "Node name for S&R": "Text Concatenate"
+      },
+      "widgets_values": [
+        ", ",
+        "false",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 307,
+      "type": "TextInput_",
+      "pos": {
+        "0": -2793,
+        "1": 3383
+      },
+      "size": {
+        "0": 418.22509765625,
+        "1": 133.20846557617188
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            456
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "TextInput_Agent-role",
+      "properties": {
+        "Node name for S&R": "TextInput_"
+      },
+      "widgets_values": [
+        "You must reply in *<language>* and markdown format.\n"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 309,
+      "type": "TextInput_",
+      "pos": {
+        "0": -2792,
+        "1": 3569
+      },
+      "size": {
+        "0": 410.3310546875,
+        "1": 79.67198181152344
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            457
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "STRING"
+        }
+      ],
+      "title": "TextInput_Languge-selection",
+      "properties": {
+        "Node name for S&R": "TextInput_"
+      },
+      "widgets_values": [
+        "English"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    }
+  ],
+  "links": [
+    [
+      84,
+      65,
+      0,
+      76,
+      2,
+      "STRING"
+    ],
+    [
+      117,
+      120,
+      0,
+      99,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      118,
+      140,
+      0,
+      99,
+      3,
+      "SAMPLER"
+    ],
+    [
+      119,
+      119,
+      0,
+      99,
+      4,
+      "SIGMAS"
+    ],
+    [
+      120,
+      131,
+      0,
+      99,
+      5,
+      "LATENT"
+    ],
+    [
+      123,
+      99,
+      0,
+      102,
+      0,
+      "LATENT"
+    ],
+    [
+      124,
+      103,
+      0,
+      102,
+      1,
+      "VAE"
+    ],
+    [
+      125,
+      97,
+      2,
+      103,
+      0,
+      "*"
+    ],
+    [
+      143,
+      98,
+      0,
+      119,
+      0,
+      "*"
+    ],
+    [
+      144,
+      101,
+      0,
+      120,
+      0,
+      "*"
+    ],
+    [
+      156,
+      104,
+      0,
+      131,
+      0,
+      "*"
+    ],
+    [
+      165,
+      105,
+      0,
+      140,
+      0,
+      "*"
+    ],
+    [
+      200,
+      100,
+      0,
+      99,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      206,
+      102,
+      0,
+      171,
+      0,
+      "*"
+    ],
+    [
+      208,
+      172,
+      0,
+      86,
+      1,
+      "STRING"
+    ],
+    [
+      222,
+      97,
+      0,
+      168,
+      0,
+      "MODEL"
+    ],
+    [
+      223,
+      97,
+      1,
+      168,
+      1,
+      "CLIP"
+    ],
+    [
+      224,
+      168,
+      1,
+      175,
+      0,
+      "*"
+    ],
+    [
+      225,
+      175,
+      0,
+      100,
+      0,
+      "CLIP"
+    ],
+    [
+      226,
+      175,
+      0,
+      101,
+      0,
+      "CLIP"
+    ],
+    [
+      227,
+      168,
+      0,
+      176,
+      0,
+      "*"
+    ],
+    [
+      228,
+      176,
+      0,
+      98,
+      0,
+      "MODEL"
+    ],
+    [
+      229,
+      176,
+      0,
+      99,
+      0,
+      "MODEL"
+    ],
+    [
+      253,
+      188,
+      0,
+      187,
+      0,
+      "TSR_MODEL"
+    ],
+    [
+      256,
+      187,
+      0,
+      189,
+      0,
+      "MESH"
+    ],
+    [
+      258,
+      171,
+      0,
+      190,
+      0,
+      "IMAGE"
+    ],
+    [
+      282,
+      205,
+      0,
+      204,
+      1,
+      "STRING"
+    ],
+    [
+      283,
+      173,
+      0,
+      204,
+      0,
+      "STRING"
+    ],
+    [
+      285,
+      206,
+      3,
+      99,
+      6,
+      "INT"
+    ],
+    [
+      286,
+      195,
+      0,
+      207,
+      0,
+      "STRING"
+    ],
+    [
+      289,
+      207,
+      0,
+      173,
+      0,
+      "*"
+    ],
+    [
+      310,
+      62,
+      0,
+      76,
+      0,
+      "STRING"
+    ],
+    [
+      313,
+      65,
+      0,
+      230,
+      1,
+      "STRING"
+    ],
+    [
+      326,
+      206,
+      3,
+      235,
+      0,
+      "*"
+    ],
+    [
+      330,
+      237,
+      0,
+      86,
+      0,
+      "STRING"
+    ],
+    [
+      331,
+      70,
+      0,
+      230,
+      0,
+      "STRING"
+    ],
+    [
+      332,
+      235,
+      0,
+      229,
+      2,
+      "INT"
+    ],
+    [
+      333,
+      235,
+      0,
+      232,
+      2,
+      "INT"
+    ],
+    [
+      339,
+      232,
+      0,
+      243,
+      0,
+      "STRING"
+    ],
+    [
+      342,
+      244,
+      0,
+      195,
+      0,
+      "STRING"
+    ],
+    [
+      343,
+      246,
+      0,
+      247,
+      0,
+      "*"
+    ],
+    [
+      344,
+      247,
+      0,
+      232,
+      0,
+      "STRING"
+    ],
+    [
+      348,
+      248,
+      0,
+      232,
+      1,
+      "STRING"
+    ],
+    [
+      351,
+      171,
+      0,
+      250,
+      0,
+      "IMAGE"
+    ],
+    [
+      353,
+      251,
+      0,
+      229,
+      3,
+      "STRING"
+    ],
+    [
+      354,
+      251,
+      0,
+      232,
+      3,
+      "STRING"
+    ],
+    [
+      360,
+      193,
+      0,
+      264,
+      0,
+      "STRING"
+    ],
+    [
+      362,
+      251,
+      0,
+      264,
+      2,
+      "STRING"
+    ],
+    [
+      363,
+      264,
+      0,
+      244,
+      0,
+      "STRING"
+    ],
+    [
+      364,
+      189,
+      0,
+      266,
+      0,
+      "MESH"
+    ],
+    [
+      368,
+      266,
+      0,
+      268,
+      0,
+      "STRING"
+    ],
+    [
+      370,
+      204,
+      0,
+      270,
+      1,
+      "STRING"
+    ],
+    [
+      372,
+      230,
+      0,
+      259,
+      2,
+      "STRING"
+    ],
+    [
+      373,
+      235,
+      0,
+      259,
+      3,
+      "INT"
+    ],
+    [
+      374,
+      267,
+      0,
+      266,
+      1,
+      "STRING"
+    ],
+    [
+      378,
+      277,
+      0,
+      207,
+      1,
+      "STRING"
+    ],
+    [
+      379,
+      266,
+      0,
+      278,
+      0,
+      "*"
+    ],
+    [
+      381,
+      202,
+      0,
+      280,
+      0,
+      "STRING"
+    ],
+    [
+      382,
+      279,
+      0,
+      280,
+      1,
+      "STRING"
+    ],
+    [
+      387,
+      281,
+      0,
+      267,
+      0,
+      "STRING"
+    ],
+    [
+      388,
+      280,
+      0,
+      270,
+      2,
+      "STRING"
+    ],
+    [
+      389,
+      171,
+      0,
+      282,
+      0,
+      "IMAGE"
+    ],
+    [
+      390,
+      207,
+      0,
+      282,
+      1,
+      "STRING"
+    ],
+    [
+      391,
+      280,
+      0,
+      282,
+      2,
+      "STRING"
+    ],
+    [
+      392,
+      280,
+      0,
+      281,
+      0,
+      "STRING"
+    ],
+    [
+      394,
+      201,
+      0,
+      281,
+      3,
+      "STRING"
+    ],
+    [
+      396,
+      207,
+      0,
+      281,
+      2,
+      "STRING"
+    ],
+    [
+      397,
+      283,
+      0,
+      281,
+      1,
+      "STRING"
+    ],
+    [
+      398,
+      63,
+      0,
+      259,
+      0,
+      "IMAGE"
+    ],
+    [
+      409,
+      243,
+      0,
+      286,
+      0,
+      "STRING"
+    ],
+    [
+      411,
+      286,
+      0,
+      100,
+      1,
+      "STRING"
+    ],
+    [
+      412,
+      70,
+      0,
+      76,
+      1,
+      "STRING"
+    ],
+    [
+      414,
+      76,
+      0,
+      287,
+      0,
+      "*"
+    ],
+    [
+      416,
+      86,
+      0,
+      287,
+      2,
+      "*"
+    ],
+    [
+      418,
+      246,
+      0,
+      287,
+      4,
+      "*"
+    ],
+    [
+      419,
+      286,
+      0,
+      287,
+      5,
+      "*"
+    ],
+    [
+      421,
+      280,
+      0,
+      289,
+      0,
+      "STRING"
+    ],
+    [
+      422,
+      283,
+      0,
+      289,
+      1,
+      "STRING"
+    ],
+    [
+      423,
+      207,
+      0,
+      289,
+      2,
+      "STRING"
+    ],
+    [
+      424,
+      290,
+      0,
+      289,
+      3,
+      "STRING"
+    ],
+    [
+      427,
+      292,
+      0,
+      291,
+      0,
+      "STRING"
+    ],
+    [
+      428,
+      289,
+      0,
+      291,
+      1,
+      "STRING"
+    ],
+    [
+      429,
+      291,
+      0,
+      287,
+      6,
+      "STRING"
+    ],
+    [
+      430,
+      63,
+      0,
+      293,
+      0,
+      "IMAGE"
+    ],
+    [
+      431,
+      173,
+      0,
+      294,
+      0,
+      "STRING"
+    ],
+    [
+      432,
+      295,
+      0,
+      294,
+      1,
+      "STRING"
+    ],
+    [
+      433,
+      294,
+      0,
+      293,
+      1,
+      "STRING"
+    ],
+    [
+      434,
+      280,
+      0,
+      293,
+      2,
+      "STRING"
+    ],
+    [
+      440,
+      302,
+      0,
+      270,
+      0,
+      "IMAGE"
+    ],
+    [
+      441,
+      302,
+      0,
+      187,
+      1,
+      "IMAGE"
+    ],
+    [
+      442,
+      190,
+      1,
+      302,
+      0,
+      "*"
+    ],
+    [
+      443,
+      190,
+      0,
+      187,
+      2,
+      "MASK"
+    ],
+    [
+      451,
+      287,
+      0,
+      288,
+      0,
+      "STRING"
+    ],
+    [
+      452,
+      293,
+      1,
+      305,
+      0,
+      "STRING"
+    ],
+    [
+      453,
+      282,
+      1,
+      303,
+      0,
+      "STRING"
+    ],
+    [
+      454,
+      270,
+      1,
+      306,
+      0,
+      "STRING"
+    ],
+    [
+      455,
+      266,
+      0,
+      269,
+      0,
+      "STRING"
+    ],
+    [
+      456,
+      307,
+      0,
+      308,
+      0,
+      "STRING"
+    ],
+    [
+      457,
+      309,
+      0,
+      308,
+      1,
+      "STRING"
+    ],
+    [
+      458,
+      62,
+      0,
+      310,
+      0,
+      "STRING"
+    ],
+    [
+      459,
+      308,
+      0,
+      310,
+      1,
+      "STRING"
+    ],
+    [
+      460,
+      310,
+      0,
+      259,
+      1,
+      "STRING"
+    ],
+    [
+      461,
+      86,
+      0,
+      311,
+      0,
+      "STRING"
+    ],
+    [
+      462,
+      308,
+      0,
+      311,
+      1,
+      "STRING"
+    ],
+    [
+      463,
+      311,
+      0,
+      229,
+      0,
+      "STRING"
+    ],
+    [
+      466,
+      259,
+      0,
+      229,
+      1,
+      "STRING"
+    ],
+    [
+      468,
+      259,
+      0,
+      315,
+      0,
+      "*"
+    ],
+    [
+      470,
+      259,
+      0,
+      316,
+      0,
+      "*"
+    ],
+    [
+      471,
+      316,
+      0,
+      287,
+      1,
+      "STRING"
+    ],
+    [
+      472,
+      229,
+      0,
+      317,
+      0,
+      "*"
+    ],
+    [
+      473,
+      229,
+      0,
+      248,
+      0,
+      "STRING"
+    ],
+    [
+      474,
+      229,
+      0,
+      264,
+      1,
+      "STRING"
+    ],
+    [
+      475,
+      229,
+      0,
+      318,
+      0,
+      "*"
+    ],
+    [
+      476,
+      318,
+      0,
+      287,
+      3,
+      "STRING"
+    ],
+    [
+      477,
+      308,
+      0,
+      230,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "2D_Generation",
+      "bounding": [
+        -2798,
+        4506,
+        2733,
+        1113
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "TripoSR",
+      "bounding": [
+        3125,
+        2251,
+        859,
+        780
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Save-files",
+      "bounding": [
+        975,
+        3169,
+        3591,
+        1413
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8769226950000021,
+      "offset": [
+        2980.015203537502,
+        -2497.3617450610486
+      ]
+    },
+    "workspace_info": {
+      "id": "8T3u6PDLtKYklyArcbrPN",
+      "name": "All-in-One LoRa Taging+Training-simon",
+      "saveLock": false,
+      "cloudID": null,
+      "coverMediaPath": null
+    }
+  },
+  "version": 0.4
+}
