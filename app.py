@@ -219,11 +219,38 @@ def ensure_directories():
 # 在主程序开始时调用
 ensure_directories()
 
-with gr.Blocks() as demo:
+with gr.Blocks(css="""
+    .markdown-display { 
+        height: 300px;
+        overflow-y: auto;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    .markdown-label {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: var(--body-text-color);
+    }
+    /* 移除外层容器的滚动设置 */
+    .markdown-column {
+        height: auto !important;
+    }
+    /* 移除中间容器的滚动设置 */
+    .markdown-column > div {
+        height: auto !important;
+        overflow: visible !important;
+    }
+    /* 确保内容容器正常显示 */
+    .contain-content {
+        height: auto !important;
+    }
+""") as demo:
     # gr.Markdown(HEADER)
     with gr.Row(variant="panel"):
-        # 左侧列设置较小的scale值
-        with gr.Column(scale=1.25):
+        # 侧列设置较小的scale值
+        with gr.Column(scale=1):
             input_image = gr.Image(label="Bio Image",height=300)
             creature_text = gr.Textbox(label="Bio Reference", lines=1)
             design_object = gr.Textbox(label="Design Target", lines=1)
@@ -245,10 +272,17 @@ with gr.Blocks() as demo:
             output_model = gr.Model3D(label="Output Model", interactive=False, height=500)
             # 减小 height 参数使图片显示区域变小
             output_image = gr.Image(label="Output Image", interactive=False, height=400)
-        with gr.Column(scale=2):
-            output_text1 = gr.Textbox(label="Design hypothesis", lines=10,interactive=False)
-            output_text2 = gr.Textbox(label="Visual Description of Design", lines=10,interactive=False)
-
+        with gr.Column(scale=2, elem_classes=["markdown-column"]):
+            with gr.Column(elem_classes=["contain-content"]):
+                gr.HTML('<div class="markdown-label">Design hypothesis</div>')
+                output_text1 = gr.Markdown(elem_classes=["markdown-display"],height=350)
+                gr.HTML('<div class="markdown-label">Visual Description of Design</div>')
+                output_text2 = gr.Markdown(elem_classes=["markdown-display"],height=350)
+                gr.Markdown("""
+                ### Links
+                - GitHub: [3D-Bionic-Designer](https://github.com/shengyu-meng/3D-Bionic-Designer)
+                - About me: [Shengyu Meng (Simon)](https://shengyu.me/en/me-en)
+                """)
     
     submit.click(
         fn=generate_design,
@@ -256,6 +290,8 @@ with gr.Blocks() as demo:
         outputs=[output_text1, output_text2, output_image, output_model],
         api_name="generate"
     )
+    
+
 
 # 启动时启用队列
 demo.queue()
