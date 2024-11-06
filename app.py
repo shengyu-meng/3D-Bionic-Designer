@@ -216,21 +216,21 @@ def ensure_directories():
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-# 在主程序开始时调用
+# 在主��序开始时调用
 ensure_directories()
 
 with gr.Blocks(css="""
     .markdown-display { 
-        height: 300px;
+        height: 335px;
         overflow-y: auto;
-        padding: 10px;
+        padding: 2px;
         border: 1px solid #ddd;
-        border-radius: 4px;
+        border-radius: 2px;
     }
     .markdown-label {
         font-size: 1rem;
         font-weight: 500;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.2rem;
         color: var(--body-text-color);
     }
     /* 移除外层容器的滚动设置 */
@@ -251,10 +251,14 @@ with gr.Blocks(css="""
     with gr.Row(variant="panel"):
         # 侧列设置较小的scale值
         with gr.Column(scale=1):
-            input_image = gr.Image(label="Bio Image",height=300)
+            gr.HTML('<div style="margin-bottom:0.5em">Bio Image / バイオイメージ / 生物图像</div>')
+            input_image = gr.Image(label="Bio Image", height=300)
+            gr.HTML('<div style="margin-bottom:0.5em">Bio Reference / バイオリファレンス / 生物参考</div>')
             creature_text = gr.Textbox(label="Bio Reference", lines=1)
+            gr.HTML('<div style="margin-bottom:0.5em">Design Target / デザイン対象 / 设计目标</div>')
             design_object = gr.Textbox(label="Design Target", lines=1)
-            seed = gr.Slider(value=0, minimum=0, maximum=9999, step=1)
+            gr.HTML('<div style="margin-bottom:0.5em">Seed</div>')
+            seed = gr.Slider(label=None, value=0, minimum=0, maximum=9999, step=1)
             submit = gr.Button("Generate", elem_id="generate", variant="primary")
             
             # Add examples
@@ -262,28 +266,30 @@ with gr.Blocks(css="""
                 examples=[
                     ["coral", "chair", "./asset/coral.jpg"]
                 ],
-                inputs=[creature_text, design_object, input_image],
-                label="Example Inputs"
+                inputs=[creature_text, design_object, input_image]
             )
-            
         # 中间和右侧列设置较大的scale值
         with gr.Column(scale=3):
-            # 增加 height 和 width 参数使 Model3D 显示区域变大且成为方形
+            # 添加英/日/中三语说明
+            gr.HTML('''
+                <div style="margin-bottom: 1em; font-size: 1.1rem; text-align: left;">
+                    <p>3D Bionic Designer / 生物模倣型3D製品デザイナー / 3D仿生产品设计师</p>
+                </div>
+            ''')
             output_model = gr.Model3D(label="Output Model", interactive=False, height=500)
             # 减小 height 参数使图片显示区域变小
             output_image = gr.Image(label="Output Image", interactive=False, height=400)
         with gr.Column(scale=2, elem_classes=["markdown-column"]):
             with gr.Column(elem_classes=["contain-content"]):
-                gr.HTML('<div class="markdown-label">Design hypothesis</div>')
+                gr.HTML('''<div class="markdown-label" style="font-size: 0.8rem;">Design hypothesis<br>デザイン仮説<br>设计假设</div>''')
                 output_text1 = gr.Markdown(elem_classes=["markdown-display"],height=350)
-                gr.HTML('<div class="markdown-label">Visual Description of Design</div>')
+                gr.HTML('''<div class="markdown-label" style="font-size: 0.8rem;">Visual Description of Design<br>デザインの視覚的説明<br>设计视觉描述</div>''')
                 output_text2 = gr.Markdown(elem_classes=["markdown-display"],height=350)
                 gr.Markdown("""
                 ### Links
                 - GitHub: [3D-Bionic-Designer](https://github.com/shengyu-meng/3D-Bionic-Designer)
                 - About me: [Shengyu Meng (Simon)](https://shengyu.me/en/me-en)
                 """)
-    
     submit.click(
         fn=generate_design,
         inputs=[creature_text, design_object, seed, input_image],
