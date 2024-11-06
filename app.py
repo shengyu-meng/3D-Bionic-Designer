@@ -74,12 +74,43 @@ def generate_design(creature_text, design_object, seed, input_image):
             prompt["172"]["inputs"]["text"] = design_object
 
         if input_image is not None:
-            image = Image.fromarray(input_image)
-            image = image.resize((int(image.size[0] * (768 / min(image.size))), 
-                               int(image.size[1] * (768 / min(image.size)))))
-            image_path = os.path.join(input_dir, "input_image.jpg")
-            image.save(image_path)
-            prompt["63"]["inputs"]["image"] = image_path
+            try:
+                # 确保输入图像是有效的
+                if isinstance(input_image, np.ndarray):
+                    image = Image.fromarray(input_image)
+                elif isinstance(input_image, str):
+                    image = Image.open(input_image)
+                else:
+                    raise ValueError("Invalid input image format")
+
+                # 验证图像模式
+                if image.mode not in ['RGB', 'RGBA']:
+                    image = image.convert('RGB')
+
+                # 限制图像最大尺寸
+                max_size = 2048
+                if max(image.size) > max_size:
+                    ratio = max_size / max(image.size)
+                    new_size = tuple(int(dim * ratio) for dim in image.size)
+                    image = image.resize(new_size, Image.Resampling.LANCZOS)
+
+                # 调整到目标尺寸
+                target_size = (int(image.size[0] * (768 / min(image.size))), 
+                             int(image.size[1] * (768 / min(image.size))))
+                image = image.resize(target_size, Image.Resampling.LANCZOS)
+
+                # 确保目录存在
+                os.makedirs(input_dir, exist_ok=True)
+                
+                # 保存图像
+                image_path = os.path.join(input_dir, f"input_image_{client_id}.jpg")
+                image.save(image_path, 'JPEG', quality=95)
+                prompt["63"]["inputs"]["image"] = image_path
+
+            except Exception as e:
+                print(f"Error processing input image: {e}")
+                yield "Error processing input image", "Error occurred", None, None
+                return
 
         # Queue prompt and get prompt_id
         prompt_id = queue_prompt(prompt, client_id)['prompt_id']
@@ -192,19 +223,32 @@ with gr.Blocks() as demo:
     # gr.Markdown(HEADER)
     with gr.Row(variant="panel"):
         # 左侧列设置较小的scale值
-        with gr.Column(scale=1):
-            input_image = gr.Image(label="Reference Image",height=300)
-            creature_text = gr.Textbox(label="Reference Creature", lines=1)
-            design_object = gr.Textbox(label="Design target object", lines=1)
+        with gr.Column(scale=1.25):
+            input_image = gr.Image(label="Bio Image",height=300)
+            creature_text = gr.Textbox(label="Bio Reference", lines=1)
+            design_object = gr.Textbox(label="Design Target", lines=1)
             seed = gr.Slider(value=0, minimum=0, maximum=9999, step=1)
             submit = gr.Button("Generate", elem_id="generate", variant="primary")
+            
+            # Add examples
+            gr.Examples(
+                examples=[
+                    ["coral", "chair", "./asset/coral.jpg"]
+                ],
+                inputs=[creature_text, design_object, input_image],
+                label="Example Inputs"
+            )
+            
         # 中间和右侧列设置较大的scale值
+        with gr.Column(scale=3):
+            # 增加 height 和 width 参数使 Model3D 显示区域变大且成为方形
+            output_model = gr.Model3D(label="Output Model", interactive=False, height=500)
+            # 减小 height 参数使图片显示区域变小
+            output_image = gr.Image(label="Output Image", interactive=False, height=400)
         with gr.Column(scale=2):
-            output_text1 = gr.Textbox(label="Design hypothesis", lines=8,interactive=False)
-            output_text2 = gr.Textbox(label="Visual Description of Design", lines=8,interactive=False)
-        with gr.Column(scale=2):
-            output_image = gr.Image(label="Output Image", interactive=False)
-            output_model = gr.Model3D(label="Output Model", interactive=False)
+            output_text1 = gr.Textbox(label="Design hypothesis", lines=10,interactive=False)
+            output_text2 = gr.Textbox(label="Visual Description of Design", lines=10,interactive=False)
+
     
     submit.click(
         fn=generate_design,
