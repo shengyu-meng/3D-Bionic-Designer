@@ -139,7 +139,7 @@
   "100": {
     "inputs": {
       "text": [
-        "286",
+        "243",
         0
       ],
       "clip": [
@@ -300,19 +300,6 @@
       "title": "WIP_short_name_generator"
     }
   },
-  "195": {
-    "inputs": {
-      "text": [
-        "244",
-        0
-      ],
-      "DisplayText_Zho_0": "Coralium_Chair"
-    },
-    "class_type": "DisplayText_Zho",
-    "_meta": {
-      "title": "Short_file_name"
-    }
-  },
   "201": {
     "inputs": {
       "text": ".obj"
@@ -360,7 +347,7 @@
   },
   "206": {
     "inputs": {
-      "seed": 292920935574733
+      "seed": 457595239984954
     },
     "class_type": "Seed",
     "_meta": {
@@ -372,7 +359,7 @@
       "delimiter": "_",
       "clean_whitespace": "true",
       "text_a": [
-        "195",
+        "244",
         0
       ],
       "text_b": [
@@ -658,7 +645,7 @@
         "281",
         0
       ],
-      "show_text": "AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\Coralium_Chair_241106170709.obj"
+      "show_text": "AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\CoralChair_NatureResilience_241106181124.obj"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -684,7 +671,7 @@
         "266",
         0
       ],
-      "show_text": "D:\\01_DL\\ComfyUI_windows_portable\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\Coralium_Chair_241106170709.obj"
+      "show_text": "D:\\01_DL\\ComfyUI_windows_portable\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\CoralChair_NatureResilience_241106181124.obj"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -844,19 +831,6 @@
       "title": "Text Input ♾️Mixlab"
     }
   },
-  "286": {
-    "inputs": {
-      "text": [
-        "243",
-        0
-      ],
-      "show_text": "An image of a bioengineered, futuristic, coral reef inspired chair, intricate, detailed, realistic, trending on artstation, in style of Antoni Gaudí,  Frank Lloyd Wright, Studio Ghibli.\n\nThe Coralium chair is characterized by interwoven hexagonal panels made of a bio-composite material, vibrant blues fading into deep greens with hints of orange and purple. The cushions are sculpted from recycled materials, mimicking the soft texture of coral polyps. Surrounding elements include a base formed from three gently curving hexagonal panels and a single coral-like glass element dangling from the back. This image should reflect a style that is trending on ArtStation, and be influenced by the artistic styles of Antoni Gaudí, Frank Lloyd Wright, and Studio Ghibli. "
-    },
-    "class_type": "ShowTextForGPT",
-    "_meta": {
-      "title": "Show Text ♾️MixlabApp"
-    }
-  },
   "287": {
     "inputs": {
       "code_input": "import json\nimport os\nfrom collections import OrderedDict\n\ndef save_inputs_to_json(input1, input2, input3, output1, output2, output3, file_path):\n    # 使用OrderedDict来控制JSON字段的顺序\n    data = OrderedDict([\n        (\"prompt1\", input1),\n        (\"output1\", output1),\n        (\"prompt2\", input2),\n        (\"output2\", output2),\n        (\"prompt3\", input3),\n        (\"output3\", output3)\n    ])\n    \n    try:\n        # 确保目标文件夹存在\n        os.makedirs(os.path.dirname(file_path), exist_ok=True)\n        \n        # 写入JSON文件\n        with open(file_path, 'w', encoding='utf-8') as f:\n            json.dump(data, f, indent=4, ensure_ascii=False)\n        print(f\"数据已成功保存到: {file_path}\")\n        \n    except Exception as e:\n        print(f\"保存文件时发生错误: {str(e)}\")\n\n\n    \n# 指定保存路径\nsave_path = inputs[6]\n# 保存数据\nsave_inputs_to_json(\n    inputs[0], inputs[2], inputs[4],\n    inputs[1], inputs[3], inputs[5],\n    save_path\n)\n \noutputs[0] = save_path\n",
@@ -882,8 +856,8 @@
         "246",
         0
       ],
-      "5_string": [
-        "286",
+      "5_": [
+        "243",
         0
       ],
       "6_string": [
@@ -902,7 +876,7 @@
         "287",
         0
       ],
-      "show_text": ".\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\Coralium_Chair_241106170709.json"
+      "show_text": ".\\ComfyUI\\output\\AI-Artist\\3D-Bionic-Product-Designer\\24-11-06\\CoralChair_NatureResilience_241106181124.json"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -1037,7 +1011,7 @@
         "282",
         1
       ],
-      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\Coralium_Chair_241106170709.jpg']"
+      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\CoralChair_NatureResilience_241106181124.jpg']"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -1050,7 +1024,7 @@
         "293",
         1
       ],
-      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\Coralium_Chair_241106170709-ref.jpg']"
+      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\CoralChair_NatureResilience_241106181124-ref.jpg']"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -1063,7 +1037,7 @@
         "270",
         1
       ],
-      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\Coralium_Chair_241106170709-TR.png']"
+      "show_text": "['D:\\\\01_DL\\\\ComfyUI_windows_portable\\\\ComfyUI\\\\output\\\\AI-Artist\\\\3D-Bionic-Product-Designer\\\\24-11-06\\\\CoralChair_NatureResilience_241106181124-TR.png']"
     },
     "class_type": "ShowTextForGPT",
     "_meta": {
@@ -1143,7 +1117,7 @@
   },
   "315": {
     "inputs": {
-      "text": "### Identification of the Biological Feature: Hexagonal Structures in Coral Formation\nCoral is known for its remarkable ability to create intricate and highly efficient structures. One prominent feature observed in coral formation is their hexagonal patterns, which are a result of natural self-organization processes. These hexagonal arrangements provide several benefits such as stability, strength, and space efficiency.\n\n### Hypothesis Development:\nThe hypothesis developed here suggests that the use of hexagonal geometric shapes inspired by coral formations can significantly improve architectural design workflows in terms of sustainability, structural integrity, and material efficiency.\n\n1. **Sustainability**: By incorporating bio-inspired geometries into building materials, architects could potentially reduce their environmental impact. Hexagonal structures are known for using space efficiently without waste, which is an eco-friendly practice.\n2. **Structural Integrity**: The hexagonal pattern observed in coral provides a highly stable and strong framework due to its inherent geometry. Applying this principle can lead to the development of new construction techniques that enhance building durability and resistance against environmental forces like wind or earthquakes.\n\n### Application Methodology:\n1. **Material Development**: Research into biomimicry could result in innovative materials mimicking hexagonal structures, which would be lighter yet stronger than conventional alternatives.\n2. **Spatial Configuration**: Architects can use the principles of self-organization seen in coral to create efficient spatial layouts within buildings. This might involve designing spaces that naturally arrange themselves based on their functional requirements and environmental conditions.\n\n### Potential Impact:\nImplementing this bio-inspired approach could revolutionize traditional architectural design practices by fostering sustainability, increasing material efficiency, improving structural integrity, and promoting adaptability of designs to various environments./nThe use of hexagonal structures inspired by coral can improve sustainable building materials, enhance structural stability through self-organization principles seen in nature.",
+      "text": "### Identification of the Biological Feature: Hexagonal Structures\nThe biological feature chosen here is the hexagonal structure created by corals. These structures are a prime example of nature's efficiency and beauty, with each hexagon providing strength while minimizing material usage.\n\n### Hypothesis Development\nCorals' use of hexagons to construct their skeletal framework demonstrates how this geometric shape can optimize structural integrity without excessive waste or energy expenditure. This principle could be applied in architectural design by incorporating hexagonal patterns into building envelopes and frameworks, potentially leading to more robust yet lighter structures that require less material.\n\n### Application Methodology\nTo systematically integrate corals' hexagonal structure into traditional architecture, we would need a thorough understanding of how these shapes can translate architecturally. This includes creating digital models based on coral geometry for use in CAD software, developing templates and prefabrication methods to construct surfaces using this shape pattern, and exploring ways to adapt the structural principles behind coral skeletons to modern building codes.\n\n### Potential Impact\nImplementing corals' hexagonal structure into architectural design could lead to significant sustainability benefits. By reducing material usage while maintaining or improving structural integrity, buildings would become more environmentally friendly. This approach also opens up possibilities for adaptive reuse of materials and structures in a post-consumer context—similarly beneficial to the life cycle efficiency demonstrated by coral reefs.\n\n### Challenged & Advantages\nOne challenge could be ensuring that such bio-inspired designs comply with building regulations regarding load-bearing capacity, insulation properties, and material safety. However, advantages include potentially reducing construction costs through efficient use of materials, enhancing energy performance due to better thermal regulation, and fostering a deeper connection between built environments and natural processes.\n\n### Conclusion\n\nThe incorporation of coral's hexagonal structure into architectural design could revolutionize the industry by leveraging nature's ingenuity for sustainable building practices. Through digital modeling, prefabrication techniques, and regulatory adaptation, this approach has the potential to create innovative designs that are not only environmentally friendly but also architecturally stunning.",
       "anything": [
         "259",
         0
@@ -1156,9 +1130,34 @@
   },
   "317": {
     "inputs": {
-      "text": "## The Coralium Chair: \n\nImagine a chair that doesn't just sit, but seems to *grow* from the earth, its form echoing the intricate beauty of coral reefs. This is the Coralium chair.  \n\n**Structure:** Its frame isn't made of solid metal or wood, but of interwoven hexagonal panels, each delicately crafted from a bio-engineered composite material inspired by coral skeletons. These panels are lightweight yet incredibly strong, allowing for both elegance and resilience. The panels subtly curve inward, mirroring the natural growth patterns of coral, creating a sense of organic flow and inviting you to sink into its embrace.\n\n**Seating:** Cushions sculpted from recycled materials mimic the soft texture of coral polyps, providing unparalleled comfort and a tactile connection to nature. They are strategically placed within the hexagonal framework, maximizing both support and breathability. \n\n**Color & Texture:** The chair's surface is not uniform. It subtly shifts in color and texture, echoing the diverse hues and patterns found in coral reefs.  Imagine vibrant blues fading into deep greens, punctuated by hints of orange and purple, reminiscent of a sunlit underwater world. This interplay of colors creates a captivating visual experience that draws your eye and invites exploration.\n\n**Details:** \n\n* **Base:** The chair rests upon a base formed from three gently curving hexagonal panels, mimicking the foundation of a coral head.  This provides stability while maintaining an airy and elegant silhouette.\n* **Accent:** A single coral-like element, crafted from sustainably sourced glass, dangles subtly from the back of the chair, adding a touch of whimsy and serving as a reminder of the natural inspiration behind its design.\n\n**Experience:** Sitting in the Coralium chair is like being transported to an underwater oasis. The combination of comfortable cushioning, organic curves, and vibrant color creates a truly immersive sensory experience that fosters relaxation and contemplation. \n\n\nThe Coralium chair is not just furniture; it's a testament to the power of biomimicry, showcasing how nature's ingenuity can inspire innovative and sustainable design solutions.",
+      "text": "## The Coral Chair: A Seat Inspired by Nature's Resilience\n\nImagine sinking into a chair unlike any you've ever experienced. This isn't just a seat; it's an embodiment of nature's enduring strength and intricate beauty.  This is the **Coral Chair**. \n\nThe chair’s silhouette resembles a gently blooming flower, its back formed by a series of interconnected hexagonal panels. These panels, crafted from sustainably sourced bamboo, evoke the skeletal structure of coral reefs, each hexagon offering both support and visual interest. The woven texture of the bamboo creates a warm, tactile surface that invites you to lean back and relax.\n\nThe seat itself is a shallow cradle, padded with recycled foam and upholstered in a natural fiber fabric reminiscent of ocean kelp. It gently curves to conform to your body, providing a feeling of secure comfort.  \n\nLight plays through the hexagonal lattice of the backrest, casting intricate patterns on the floor and walls around you. The chair seems to breathe with the changing light, its surface shimmering like the sunlit waves above a coral reef. \n\n**The Coral Chair is more than just furniture; it's a conversation starter.** It sparks curiosity about the interconnectedness of nature and design, prompting reflection on the resilience and beauty found in the natural world.  Each chair is unique, with subtle variations in the bamboo patterns reflecting the individuality of each coral colony. \n\n\n**In essence, the Coral Chair is a harmonious blend of form and function, embodying sustainable practices while celebrating the wonders of the natural world.**",
       "anything": [
         "229",
+        0
+      ]
+    },
+    "class_type": "easy showAnything",
+    "_meta": {
+      "title": "Show Any"
+    }
+  },
+  "320": {
+    "inputs": {
+      "text": "An image of a surreal, coral_chair, blooming_like_a_flower, intricate_hexagonal_panels, detailed, realistic, trending on artstation, in style of Antoni Gaudí, Eero Saarinen, Frida Kahlo.\n\nThe chair is characterized by sustainably sourced bamboo panels, woven texture, warm, tactile surface, recycled foam padding, natural fiber fabric reminiscent of ocean kelp. Surrounding elements include dappled sunlight filtering through the backrest, casting intricate patterns on the floor and walls, shimmering like sunlit waves above a coral reef. This image should reflect a style that is trending on ArtStation, evoking themes of nature's resilience, interconnectedness, and sustainable design. \n\n\n",
+      "anything": [
+        "243",
+        0
+      ]
+    },
+    "class_type": "easy showAnything",
+    "_meta": {
+      "title": "Show Any"
+    }
+  },
+  "323": {
+    "inputs": {
+      "anything": [
+        "244",
         0
       ]
     },

@@ -26,7 +26,7 @@ input_dir = os.path.abspath("./temp/input_temp")
 # 添加ComfyUI输出路径到允许路径列表
 comfyui_output_path = "D:/01_DL/ComfyUI_windows_portable/ComfyUI/output"
 
-workflow_file = os.path.abspath("./3D-Bionic-Product-Designer-V09_API.json")
+workflow_file = os.path.abspath("./3D-Bionic-Product-Designer-V10_API.json")
 
     
 def mesh_convert(input_file, output_file=None):
@@ -225,7 +225,7 @@ ensure_directories()
 
 with gr.Blocks(css="""
     .markdown-display { 
-        height: 335px;
+        height: 385px;
         overflow-y: auto;
         padding: 2px;
         border: 1px solid #ddd;
@@ -250,6 +250,15 @@ with gr.Blocks(css="""
     .contain-content {
         height: auto !important;
     }
+    /* Add styles for the examples container */
+    .examples-container {
+        height: 150px; /* 设置固定高度 */
+        overflow-y: auto; /* 启用垂直滚动 */
+    }
+    /* 确保 Examples 组件填满容器高度 */
+    .examples-container > div {
+        height: 100%;
+    }
 """) as demo:
     # gr.Markdown(HEADER)
     with gr.Row(variant="panel"):
@@ -262,22 +271,46 @@ with gr.Blocks(css="""
             gr.HTML('<div style="margin-bottom:0.4em">Design Target / デザイン対象 / 设计目标</div>')
             design_object = gr.Textbox(label="Design Target", lines=1)
             gr.HTML('<div style="margin-bottom:0.4em">Seed</div>')
-            seed = gr.Slider(label=None, value=0, minimum=0, maximum=9999, step=1)
+            seed = gr.Slider(label=None, value=43, minimum=0, maximum=9999, step=1)
             gr.HTML('<div style="margin-bottom:0.4em">Generation Language / 生成言語 / 生成文本语言</div>')
             gen_language = gr.Dropdown(
                 choices=["English", "Japanese", "Chinese"],
-                value="English",interactive=True,
+                value="English",
+                interactive=True,
                 label=None
             )
-            submit = gr.Button("Generate", elem_id="generate", variant="primary")
             
-            # Add examples
-            gr.Examples(
-                examples=[
-                    ["coral", "chair", "./asset/coral.jpg"]
-                ],
-                inputs=[creature_text, design_object, input_image]
-            )
+            # Examples as dropdown menu
+            with gr.Column():
+                gr.HTML('<div style="margin-bottom:0.4em">Examples / サンプル / 示例</div>')
+                # Define examples dictionary first
+                examples = {
+                    "Coral x Chair": ["coral", "chair", "./asset/coral.jpg"],
+                    "Mycelium x Pavillion": ["mycelium", "pavillion", "./asset/mycelium.jpg"], 
+                    "Coral x Table": ["coral", "table", "./asset/coral.jpg"],
+                    "Rose x Skirt": ["rose", "skirt", "./asset/rose.jpg"],
+                    "Butterfly x Flight": ["butterfly", "flight", "./asset/butterfly.jpg"],
+                    "Fish x Boat": ["fish", "boat", "./asset/fish.jpg"],
+                    "Moss x Bed": ["moss", "bed", "./asset/moss.jpg"]
+                }
+                
+                example_dropdown = gr.Dropdown(
+                    choices=list(examples.keys()),
+                    label=None,
+                    value="Coral x Chair"
+                )
+
+                def load_example(choice):
+                    return examples[choice]
+
+                example_dropdown.change(
+                    fn=load_example,
+                    inputs=[example_dropdown],
+                    outputs=[creature_text, design_object, input_image]
+                )
+
+                submit = gr.Button("Generate / 生成する / 生成", elem_id="generate", variant="primary")
+                
         # 中间和右侧列设置较大的scale值
         with gr.Column(scale=3):
             # 添加英/日/中三语说明
@@ -286,15 +319,15 @@ with gr.Blocks(css="""
                     <p>3D Bionic Designer / 生物模倣型3D製品デザイナー / 3D仿生产品设计师</p>
                 </div>
             ''')
-            output_model = gr.Model3D(label="Output Model", interactive=False, height=500)
+            output_model = gr.Model3D(label="Output Model", interactive=False, height=550)
             # 减小 height 参数使图片显示区域变小
-            output_image = gr.Image(label="Output Image", interactive=False, height=400)
+            output_image = gr.Image(label="Output Image", interactive=False, height=450)
         with gr.Column(scale=2, elem_classes=["markdown-column"]):
             with gr.Column(elem_classes=["contain-content"]):
-                gr.HTML('''<div class="markdown-label" style="font-size: 0.8rem;">Design hypothesis<br>デザイン仮説<br>设计假设</div>''')
-                output_text1 = gr.Markdown(elem_classes=["markdown-display"],height=350)
-                gr.HTML('''<div class="markdown-label" style="font-size: 0.8rem;">Visual Description of Design<br>デザインの視覚的説明<br>设计视觉描述</div>''')
-                output_text2 = gr.Markdown(elem_classes=["markdown-display"],height=350)
+                gr.HTML('''<div class="markdown-label" style="font-size: 0.85rem;">Design hypothesis<br>デザイン仮説<br>设计假设</div>''')
+                output_text1 = gr.Markdown(elem_classes=["markdown-display"], height=400)
+                gr.HTML('''<div class="markdown-label" style="font-size: 0.85rem;">Visual Description of Design<br>デザインの視覚的説明<br>设计视觉描述</div>''')
+                output_text2 = gr.Markdown(elem_classes=["markdown-display"], height=400)
                 gr.Markdown("""
                 ### Links
                 - GitHub: [3D-Bionic-Designer](https://github.com/shengyu-meng/3D-Bionic-Designer)
@@ -309,6 +342,6 @@ with gr.Blocks(css="""
     
 
 
-# 启动时启用队列
+# 启动时启用队
 demo.queue()
 demo.launch(allowed_paths=[comfyui_output_path])
