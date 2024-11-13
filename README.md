@@ -8,8 +8,9 @@
 - LLM / LVM 模型会首先解析输入信息，按照"设计思路文案"→"方案视觉描述文案"→"prompt"→"2D图形输出"→"3D模型输出"的步骤完成自主设计。
 - 所有计算均在本地使用开源模型完成，不需要API及联网功能（安装完成后）。
 
+[Demo Video](https://raw.githubusercontent.com/shengyu-meng/3D-Bionic-Designer/main/asset/3D_bio_desigenr_demo_mute.mp4)
 
-![3D-Bionic-Designer-Demo](./asset/3D_bio_designer_demo_mute.mp4)
+https://github.com/user-attachments/assets/b00c4220-d333-43af-80e8-443726b10f05
 
 # 安装方法
 ## 安装Comfyui

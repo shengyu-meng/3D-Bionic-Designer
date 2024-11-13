@@ -8,7 +8,10 @@
 - The LLM / LVM models first analyze the input information and complete the autonomous design following the steps: "Design concept text" → "Visual description text" → "prompt" → "2D image output" → "3D model output".
 - All computations are performed locally using open-source models, requiring no API or internet connection (after installation).
 
-![3D-Bionic-Designer-Demo](./asset/3D_bio_designer_demo_mute.mp4)
+[Demo Video](https://raw.githubusercontent.com/shengyu-meng/3D-Bionic-Designer/main/asset/3D_bio_desigenr_demo_mute.mp4)
+
+https://github.com/user-attachments/assets/b00c4220-d333-43af-80e8-443726b10f05
+
 
 # Installation
 ## Install Comfyui
