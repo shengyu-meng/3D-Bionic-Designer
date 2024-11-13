@@ -344,4 +344,4 @@ with gr.Blocks(css="""
 
 # 启动时启用队
 demo.queue()
-demo.launch(allowed_paths=[comfyui_output_path])
+demo.launch(allowed_paths=[comfyui_output_path],share=True)
