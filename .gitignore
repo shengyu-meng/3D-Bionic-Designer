@@ -7,3 +7,5 @@ temp.py
 .script_examples/
 temp/
 desktop.ini
+app-proxy.py
+.gradio/

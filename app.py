@@ -51,11 +51,15 @@ def get_history(prompt_id):
     with urllib.request.urlopen("http://{}/history/{}".format(server_address, prompt_id)) as response:
         return json.loads(response.read())
 
-def generate_design(creature_text, design_object, seed, input_image, gen_language):
+def generate_design(creature_text, design_object, seed, randomize_seed, input_image, gen_language):
     """Main generation function with proper websocket handling"""
     try:
+        # 如果启用随机种子，则生成一个随机数
+        if randomize_seed:
+            seed = np.random.randint(0, 9999)
+            
         # 在开始时显示加载提示
-        yield "Generating...", "Generating...", None, None
+        yield "Generating...", "Generating...", None, None, gr.update(value=seed)
         
         # Create new websocket connection for each request
         client_id = str(uuid.uuid4())
@@ -86,7 +90,7 @@ def generate_design(creature_text, design_object, seed, input_image, gen_languag
                 else:
                     raise ValueError("Invalid input image format")
 
-                # 验证图像模式
+                # 验图像模式
                 if image.mode not in ['RGB', 'RGBA']:
                     image = image.convert('RGB')
 
@@ -112,7 +116,7 @@ def generate_design(creature_text, design_object, seed, input_image, gen_languag
 
             except Exception as e:
                 print(f"Error processing input image: {e}")
-                yield "Error processing input image", "Error occurred", None, None
+                yield "Error processing input image", "Error occurred", None, None, gr.update(value=seed)
                 return
 
         # Queue prompt and get prompt_id
@@ -129,7 +133,7 @@ def generate_design(creature_text, design_object, seed, input_image, gen_languag
 
         while True:
             if time.time() - start_time > timeout:
-                return "Operation timed out", "Operation timed out", None, None
+                return "Operation timed out", "Operation timed out", None, None, gr.update(value=seed)
                 
             try:
                 out = ws.recv()
@@ -148,7 +152,8 @@ def generate_design(creature_text, design_object, seed, input_image, gen_languag
                                 yield (text1, 
                                       "Generating..." if not text2_done else gr.update(), 
                                       None if not image_done else gr.update(), 
-                                      None if not obj_done else gr.update())
+                                      None if not obj_done else gr.update(),
+                                      gr.update(value=seed))
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
                                 
@@ -159,7 +164,8 @@ def generate_design(creature_text, design_object, seed, input_image, gen_languag
                                 yield (text1 if text1_done else "Generating...", 
                                       text2,
                                       None if not image_done else gr.update(), 
-                                      None if not obj_done else gr.update())
+                                      None if not obj_done else gr.update(),
+                                      gr.update(value=seed))
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
                                 
@@ -170,7 +176,8 @@ def generate_design(creature_text, design_object, seed, input_image, gen_languag
                                 yield (text1 if text1_done else "Generating...", 
                                       text2 if text2_done else "Generating...",
                                       latest_image, 
-                                      None if not obj_done else gr.update())
+                                      None if not obj_done else gr.update(),
+                                      gr.update(value=seed))
                             except Exception as e:
                                 print(f"Error accessing output: {e}")
                                 
@@ -184,7 +191,8 @@ def generate_design(creature_text, design_object, seed, input_image, gen_languag
                                         yield (text1 if text1_done else "Generating...", 
                                               text2 if text2_done else "Generating...",
                                               latest_image if image_done else None, 
-                                              latest_obj)
+                                              latest_obj,
+                                              gr.update(value=seed))
                                     except Exception as e:
                                         print(f"Error converting mesh: {e}")
                             except Exception as e:
@@ -198,12 +206,12 @@ def generate_design(creature_text, design_object, seed, input_image, gen_languag
 
             except websocket.WebSocketException as e:
                 print(f"WebSocket error: {e}")
-                yield "WebSocket error", "WebSocket error", None, None
+                yield "WebSocket error", "WebSocket error", None, None, gr.update(value=seed)
                 break
                 
     except Exception as e:
         print(f"Error: {e}")
-        yield f"Error: {str(e)}", "Error occurred", None, None
+        yield f"Error: {str(e)}", "Error occurred", None, None, gr.update(value=seed)
         
     finally:
         try:
@@ -253,7 +261,7 @@ with gr.Blocks(css="""
     /* Add styles for the examples container */
     .examples-container {
         height: 150px; /* 设置固定高度 */
-        overflow-y: auto; /* 启用垂直滚动 */
+        overflow-y: auto; /* 启用垂直动 */
     }
     /* 确保 Examples 组件填满容器高度 */
     .examples-container > div {
@@ -270,8 +278,44 @@ with gr.Blocks(css="""
             creature_text = gr.Textbox(label="Bio Reference", lines=1)
             gr.HTML('<div style="margin-bottom:0.4em">Design Target / デザイン対象 / 设计目标</div>')
             design_object = gr.Textbox(label="Design Target", lines=1)
+            
+            # Examples 部分移动到这里
+            gr.HTML('<div style="margin-bottom:0.4em">Input Examples / サンプル入力 / 示例输入</div>')
+            # Define examples dictionary first
+            examples = {
+                "None": [None, None, None],  # 添加 None 选项
+                "Coral x Chair": ["coral", "chair", "./asset/coral.jpg"],
+                "Mycelium x Pavillion": ["mycelium", "pavillion", "./asset/mycelium.jpg"], 
+                "Coral x Table": ["coral", "table", "./asset/coral.jpg"],
+                "Rose x Skirt": ["rose", "skirt", "./asset/rose.jpg"],
+                "Butterfly x Aircraft": ["butterfly", "Aircraft", "./asset/butterfly.jpg"],
+                "Fish x Boat": ["fish", "boat", "./asset/fish.jpg"],
+                "Moss x Bed": ["moss", "bed", "./asset/moss.jpg"]
+            }
+            
+            example_dropdown = gr.Dropdown(
+                choices=list(examples.keys()),
+                label=None,
+                value="None"  # 设置默认值为 "None"
+            )
+
+            def load_example(choice):
+                if choice == "None":
+                    return [None, None, None]  # 清空所有输入
+                return examples[choice]
+
+            example_dropdown.change(
+                fn=load_example,
+                inputs=[example_dropdown],
+                outputs=[creature_text, design_object, input_image]
+            )
+
+            # Seed 部分移到 Examples 后面
             gr.HTML('<div style="margin-bottom:0.4em">Seed</div>')
-            seed = gr.Slider(label=None, value=43, minimum=0, maximum=9999, step=1)
+            with gr.Row():
+                seed = gr.Slider(label=None, value=43, minimum=0, maximum=9999, step=1)
+                randomize_seed = gr.Checkbox(label="Random", value=False)
+                
             gr.HTML('<div style="margin-bottom:0.4em">Generation Language / 生成言語 / 生成文本语言</div>')
             gen_language = gr.Dropdown(
                 choices=["English", "Japanese", "Chinese"],
@@ -280,37 +324,8 @@ with gr.Blocks(css="""
                 label=None
             )
             
-            # Examples as dropdown menu
-            with gr.Column():
-                gr.HTML('<div style="margin-bottom:0.4em">Examples / サンプル / 示例</div>')
-                # Define examples dictionary first
-                examples = {
-                    "Coral x Chair": ["coral", "chair", "./asset/coral.jpg"],
-                    "Mycelium x Pavillion": ["mycelium", "pavillion", "./asset/mycelium.jpg"], 
-                    "Coral x Table": ["coral", "table", "./asset/coral.jpg"],
-                    "Rose x Skirt": ["rose", "skirt", "./asset/rose.jpg"],
-                    "Butterfly x Flight": ["butterfly", "flight", "./asset/butterfly.jpg"],
-                    "Fish x Boat": ["fish", "boat", "./asset/fish.jpg"],
-                    "Moss x Bed": ["moss", "bed", "./asset/moss.jpg"]
-                }
-                
-                example_dropdown = gr.Dropdown(
-                    choices=list(examples.keys()),
-                    label=None,
-                    value="Coral x Chair"
-                )
-
-                def load_example(choice):
-                    return examples[choice]
-
-                example_dropdown.change(
-                    fn=load_example,
-                    inputs=[example_dropdown],
-                    outputs=[creature_text, design_object, input_image]
-                )
-
-                submit = gr.Button("Generate / 生成する / 生成", elem_id="generate", variant="primary")
-                
+            submit = gr.Button("Generate / 生成する / 生成", elem_id="generate", variant="primary")
+            
         # 中间和右侧列设置较大的scale值
         with gr.Column(scale=3):
             # 添加英/日/中三语说明
@@ -324,7 +339,7 @@ with gr.Blocks(css="""
             output_image = gr.Image(label="Output Image", interactive=False, height=450)
         with gr.Column(scale=2, elem_classes=["markdown-column"]):
             with gr.Column(elem_classes=["contain-content"]):
-                gr.HTML('''<div class="markdown-label" style="font-size: 0.85rem;">Design hypothesis<br>デザイン仮説<br>设计假设</div>''')
+                gr.HTML('''<div class="markdown-label" style="font-size: 0.85rem;">Design hypothesis<br>ザイン仮説<br>设计假设</div>''')
                 output_text1 = gr.Markdown(elem_classes=["markdown-display"], height=400)
                 gr.HTML('''<div class="markdown-label" style="font-size: 0.85rem;">Visual Description of Design<br>デザインの視覚的説明<br>设计视觉描述</div>''')
                 output_text2 = gr.Markdown(elem_classes=["markdown-display"], height=400)
@@ -335,8 +350,8 @@ with gr.Blocks(css="""
                 """)
     submit.click(
         fn=generate_design,
-        inputs=[creature_text, design_object, seed, input_image, gen_language],
-        outputs=[output_text1, output_text2, output_image, output_model],
+        inputs=[creature_text, design_object, seed, randomize_seed, input_image, gen_language],
+        outputs=[output_text1, output_text2, output_image, output_model, seed],
         api_name="generate"
     )
     

@@ -1,14 +1,12 @@
 # 3D-Bionic-Designer
 
-[简体中文](./README.md) | [English](./README_EN.md) | 日本語
+[简体中文](./README_CN.md) | [English](./README.md) | 日本語
 
 # プロジェクト紹介
 - ComfyUIバックエンド + Gradioフロントエンドを使用したAgent駆動の3Dバイオニック製品デザイナー。
 - 参照したい生物の名前、画像、およびデザイン対象（テーブル、椅子、小型展示館など）を入力するだけで、対応するバイオニック製品を生成し、テキスト、画像、3Dモデルを出力します。
 - LLM / LVMモデルは、入力情報を最初に解析し、「デザインコンセプトテキスト」→「ビジュアル説明テキスト」→「プロンプト」→「2D画像出力」→「3Dモデル出力」の手順で自律的にデザインを完成させます。
 - すべての計算はオープンソースモデルを使用してローカルで実行され、APIやインターネット接続は不要です（インストール後）。
-
-[Demo Video](https://raw.githubusercontent.com/shengyu-meng/3D-Bionic-Designer/main/asset/3D_bio_desigenr_demo_mute.mp4)
 
 https://github.com/user-attachments/assets/b00c4220-d333-43af-80e8-443726b10f05
 
